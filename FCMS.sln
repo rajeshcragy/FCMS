@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{73D46264-7C9D-44F8-BC77-A9C6572B8C97}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCMS.Data", "FCMS.Data\FCMS.Data.csproj", "{0C04CB85-67A1-4325-A36C-2B1ABC3CD85E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DFD56DB9-41A9-4B84-B9A9-0DB86A006B91}"
