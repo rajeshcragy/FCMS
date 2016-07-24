@@ -1,0 +1,2647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FCMSEntityModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="FCMSEntityModelStoreContainer">
+    <EntitySet Name="Users" EntityType="FCMSEntityModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserRoles" EntityType="FCMSEntityModel.Store.UserRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserUserRoles" EntityType="FCMSEntityModel.Store.UserUserRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="States" EntityType="FCMSEntityModel.Store.States" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Banks" EntityType="FCMSEntityModel.Store.Banks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Branches" EntityType="FCMSEntityModel.Store.Branches" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Customers" EntityType="FCMSEntityModel.Store.Customers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerCustomInfoes" EntityType="FCMSEntityModel.Store.CustomerCustomInfoes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contracts" EntityType="FCMSEntityModel.Store.Contracts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Guarantors" EntityType="FCMSEntityModel.Store.Guarantors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContractCustomInfoes" EntityType="FCMSEntityModel.Store.ContractCustomInfoes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Devices" EntityType="FCMSEntityModel.Store.Devices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DeviceBlocks" EntityType="FCMSEntityModel.Store.DeviceBlocks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DeviceEvents" EntityType="FCMSEntityModel.Store.DeviceEvents" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Receipts" EntityType="FCMSEntityModel.Store.Receipts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReceiptCancels" EntityType="FCMSEntityModel.Store.ReceiptCancels" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReceiptsRepresentations" EntityType="FCMSEntityModel.Store.ReceiptsRepresentations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReceiptDetails" EntityType="FCMSEntityModel.Store.ReceiptDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReceiptReprints" EntityType="FCMSEntityModel.Store.ReceiptReprints" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReceiptDenominations" EntityType="FCMSEntityModel.Store.ReceiptDenominations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DCRMasters" EntityType="FCMSEntityModel.Store.DCRMasters" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DCRReceipts" EntityType="FCMSEntityModel.Store.DCRReceipts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DCSMasters" EntityType="FCMSEntityModel.Store.DCSMasters" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DCSDCRs" EntityType="FCMSEntityModel.Store.DCSDCRs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DeviceLocations" EntityType="FCMSEntityModel.Store.DeviceLocations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserAttributes" EntityType="FCMSEntityModel.Store.UserAttributes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserThresholds" EntityType="FCMSEntityModel.Store.UserThresholds" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContractReceiptMessages" EntityType="FCMSEntityModel.Store.ContractReceiptMessages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserNotifications" EntityType="FCMSEntityModel.Store.UserNotifications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TradeAdvanceMasters" EntityType="FCMSEntityModel.Store.TradeAdvanceMasters" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UpdateReasons" EntityType="FCMSEntityModel.Store.UpdateReasons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Updates" EntityType="FCMSEntityModel.Store.Updates" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReceiptImages" EntityType="FCMSEntityModel.Store.ReceiptImages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CategoryGroups" EntityType="FCMSEntityModel.Store.CategoryGroups" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CategoryItems" EntityType="FCMSEntityModel.Store.CategoryItems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TravelDebits" EntityType="FCMSEntityModel.Store.TravelDebits" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TravelDebitDetails" EntityType="FCMSEntityModel.Store.TravelDebitDetails" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UserUserUserRole" Association="FCMSEntityModel.Store.UserUserUserRole">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserUserRole" EntitySet="UserUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="UserRoleUserUserRole" Association="FCMSEntityModel.Store.UserRoleUserUserRole">
+      <End Role="UserRole" EntitySet="UserRoles" />
+      <End Role="UserUserRole" EntitySet="UserUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="StateBank" Association="FCMSEntityModel.Store.StateBank">
+      <End Role="State" EntitySet="States" />
+      <End Role="Bank" EntitySet="Banks" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerCustomerCustomInfo" Association="FCMSEntityModel.Store.CustomerCustomerCustomInfo">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerCustomInfo" EntitySet="CustomerCustomInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerContract" Association="FCMSEntityModel.Store.CustomerContract">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Contract" EntitySet="Contracts" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerGuarantor" Association="FCMSEntityModel.Store.CustomerGuarantor">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Guarantor" EntitySet="Guarantors" />
+    </AssociationSet>
+    <AssociationSet Name="ContractGuarantor" Association="FCMSEntityModel.Store.ContractGuarantor">
+      <End Role="Contract" EntitySet="Contracts" />
+      <End Role="Guarantor" EntitySet="Guarantors" />
+    </AssociationSet>
+    <AssociationSet Name="ContractContractCustomInfo" Association="FCMSEntityModel.Store.ContractContractCustomInfo">
+      <End Role="Contract" EntitySet="Contracts" />
+      <End Role="ContractCustomInfo" EntitySet="ContractCustomInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="BranchContract" Association="FCMSEntityModel.Store.BranchContract">
+      <End Role="Branch" EntitySet="Branches" />
+      <End Role="Contract" EntitySet="Contracts" />
+    </AssociationSet>
+    <AssociationSet Name="DeviceDeviceBlock" Association="FCMSEntityModel.Store.DeviceDeviceBlock">
+      <End Role="Device" EntitySet="Devices" />
+      <End Role="DeviceBlock" EntitySet="DeviceBlocks" />
+    </AssociationSet>
+    <AssociationSet Name="BranchDevice" Association="FCMSEntityModel.Store.BranchDevice">
+      <End Role="Branch" EntitySet="Branches" />
+      <End Role="Device" EntitySet="Devices" />
+    </AssociationSet>
+    <AssociationSet Name="DeviceDeviceEvent" Association="FCMSEntityModel.Store.DeviceDeviceEvent">
+      <End Role="Device" EntitySet="Devices" />
+      <End Role="DeviceEvent" EntitySet="DeviceEvents" />
+    </AssociationSet>
+    <AssociationSet Name="UserDevice" Association="FCMSEntityModel.Store.UserDevice">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Device" EntitySet="Devices" />
+    </AssociationSet>
+    <AssociationSet Name="ReceiptReceiptCancel" Association="FCMSEntityModel.Store.ReceiptReceiptCancel">
+      <End Role="Receipt" EntitySet="Receipts" />
+      <End Role="ReceiptCancel" EntitySet="ReceiptCancels" />
+    </AssociationSet>
+    <AssociationSet Name="ReceiptReceiptsRepresentation" Association="FCMSEntityModel.Store.ReceiptReceiptsRepresentation">
+      <End Role="Receipt" EntitySet="Receipts" />
+      <End Role="ReceiptsRepresentation" EntitySet="ReceiptsRepresentations" />
+    </AssociationSet>
+    <AssociationSet Name="ReceiptReceiptDetail" Association="FCMSEntityModel.Store.ReceiptReceiptDetail">
+      <End Role="Receipt" EntitySet="Receipts" />
+      <End Role="ReceiptDetail" EntitySet="ReceiptDetails" />
+    </AssociationSet>
+    <AssociationSet Name="ReceiptReceiptReprint" Association="FCMSEntityModel.Store.ReceiptReceiptReprint">
+      <End Role="Receipt" EntitySet="Receipts" />
+      <End Role="ReceiptReprint" EntitySet="ReceiptReprints" />
+    </AssociationSet>
+    <AssociationSet Name="ReceiptReceiptDenomination" Association="FCMSEntityModel.Store.ReceiptReceiptDenomination">
+      <End Role="Receipt" EntitySet="Receipts" />
+      <End Role="ReceiptDenomination" EntitySet="ReceiptDenominations" />
+    </AssociationSet>
+    <AssociationSet Name="ReceiptDCRReceipt" Association="FCMSEntityModel.Store.ReceiptDCRReceipt">
+      <End Role="Receipt" EntitySet="Receipts" />
+      <End Role="DCRReceipt" EntitySet="DCRReceipts" />
+    </AssociationSet>
+    <AssociationSet Name="DCRMasterDCRReceipt" Association="FCMSEntityModel.Store.DCRMasterDCRReceipt">
+      <End Role="DCRMaster" EntitySet="DCRMasters" />
+      <End Role="DCRReceipt" EntitySet="DCRReceipts" />
+    </AssociationSet>
+    <AssociationSet Name="DCSMasterDCSDCR" Association="FCMSEntityModel.Store.DCSMasterDCSDCR">
+      <End Role="DCSMaster" EntitySet="DCSMasters" />
+      <End Role="DCSDCR" EntitySet="DCSDCRs" />
+    </AssociationSet>
+    <AssociationSet Name="DCRMasterDCSDCR" Association="FCMSEntityModel.Store.DCRMasterDCSDCR">
+      <End Role="DCRMaster" EntitySet="DCRMasters" />
+      <End Role="DCSDCR" EntitySet="DCSDCRs" />
+    </AssociationSet>
+    <AssociationSet Name="DeviceDeviceLocation" Association="FCMSEntityModel.Store.DeviceDeviceLocation">
+      <End Role="Device" EntitySet="Devices" />
+      <End Role="DeviceLocation" EntitySet="DeviceLocations" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserAttribute" Association="FCMSEntityModel.Store.UserUserAttribute">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserAttribute" EntitySet="UserAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="BranchUser" Association="FCMSEntityModel.Store.BranchUser">
+      <End Role="Branch" EntitySet="Branches" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="StateBranch" Association="FCMSEntityModel.Store.StateBranch">
+      <End Role="State" EntitySet="States" />
+      <End Role="Branch" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserThreshold" Association="FCMSEntityModel.Store.UserUserThreshold">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserThreshold" EntitySet="UserThresholds" />
+    </AssociationSet>
+    <AssociationSet Name="ContractContractReceiptMessage" Association="FCMSEntityModel.Store.ContractContractReceiptMessage">
+      <End Role="Contract" EntitySet="Contracts" />
+      <End Role="ContractReceiptMessage" EntitySet="ContractReceiptMessages" />
+    </AssociationSet>
+    <AssociationSet Name="UserUserNotification" Association="FCMSEntityModel.Store.UserUserNotification">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserNotification" EntitySet="UserNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="UpdateReasonUpdate" Association="FCMSEntityModel.Store.UpdateReasonUpdate">
+      <End Role="UpdateReason" EntitySet="UpdateReasons" />
+      <End Role="Update" EntitySet="Updates" />
+    </AssociationSet>
+    <AssociationSet Name="DeviceUpdate" Association="FCMSEntityModel.Store.DeviceUpdate">
+      <End Role="Device" EntitySet="Devices" />
+      <End Role="Update" EntitySet="Updates" />
+    </AssociationSet>
+    <AssociationSet Name="ReceiptReceiptImage" Association="FCMSEntityModel.Store.ReceiptReceiptImage">
+      <End Role="Receipt" EntitySet="Receipts" />
+      <End Role="ReceiptImage" EntitySet="ReceiptImages" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryGroupCategoryItem" Association="FCMSEntityModel.Store.CategoryGroupCategoryItem">
+      <End Role="CategoryGroup" EntitySet="CategoryGroups" />
+      <End Role="CategoryItem" EntitySet="CategoryItems" />
+    </AssociationSet>
+    <AssociationSet Name="TravelDebitTravelDebitDetail" Association="FCMSEntityModel.Store.TravelDebitTravelDebitDetail">
+      <End Role="TravelDebit" EntitySet="TravelDebits" />
+      <End Role="TravelDebitDetail" EntitySet="TravelDebitDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DeviceId" Type="int" Nullable="true" />
+    <Property Name="PassWordHash" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BranchId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Locked" Type="decimal" Nullable="false" />
+    <Property Name="Blocked" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRoles">
+    <Key>
+      <PropertyRef Name="UserRoleId" />
+    </Key>
+    <Property Name="UserRoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserUserRoles">
+    <Key>
+      <PropertyRef Name="UserUserRoleId" />
+    </Key>
+    <Property Name="UserUserRoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="UserRoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Banks">
+    <Key>
+      <PropertyRef Name="BankId" />
+    </Key>
+    <Property Name="BankId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateId" Type="int" Nullable="false" />
+    <Property Name="Code" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IFCSCode" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Branches">
+    <Key>
+      <PropertyRef Name="BranchId" />
+    </Key>
+    <Property Name="BranchId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address4" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PinCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNo" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+    <Property Name="CustomerCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Salutation" Type="varchar" Nullable="true" MaxLength="5" />
+    <Property Name="CustomerName" Type="varchar" Nullable="true" MaxLength="60" />
+    <Property Name="Address1" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Address2" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Address3" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Address4" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="City" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="State" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="PinCode" Type="varchar" Nullable="true" MaxLength="6" />
+    <Property Name="PhoneCode" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="PhoneNo" Type="varchar" Nullable="true" MaxLength="15" />
+    <Property Name="MobileNo" Type="varchar" Nullable="true" MaxLength="11" />
+    <Property Name="PanNo" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="ContractCount" Type="int" Nullable="true" />
+    <Property Name="BranchCode" Type="varchar" Nullable="true" MaxLength="4" />
+    <Property Name="GPSLatitude" Type="decimal" Nullable="true" />
+    <Property Name="GPSLongitude" Type="decimal" Nullable="true" />
+  </EntityType>
+  <EntityType Name="CustomerCustomInfoes">
+    <Key>
+      <PropertyRef Name="CustomerCustomInfoId" />
+    </Key>
+    <Property Name="CustomerCustomInfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contracts">
+    <Key>
+      <PropertyRef Name="ContractId" />
+    </Key>
+    <Property Name="ContractId" Type="int" Nullable="false" />
+    <Property Name="ContractNo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BranchId" Type="int" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+    <Property Name="ContractDt" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="InvoiceDt" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="InvoiceAmt" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="FinAmt" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="FinCharges" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Rate" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="LastDueDt" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="Product" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="Bus_Done_By" Type="varchar" Nullable="true" MaxLength="6" />
+    <Property Name="Model" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="Brand" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="Division" Type="varchar" Nullable="true" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Guarantors">
+    <Key>
+      <PropertyRef Name="GuarantorId" />
+    </Key>
+    <Property Name="GuarantorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContractId" Type="int" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContractCustomInfoes">
+    <Key>
+      <PropertyRef Name="ContractCustomInfoId" />
+    </Key>
+    <Property Name="ContractCustomInfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContractId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DataType" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Devices">
+    <Key>
+      <PropertyRef Name="DeviceId" />
+    </Key>
+    <Property Name="DeviceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceTypeName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BranchId" Type="int" Nullable="false" />
+    <Property Name="SerialNo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IMEI" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsLocked" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsBlocked" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsDeleted" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastConnectedLatitude" Type="decimal" Nullable="true" />
+    <Property Name="LastConnectedLongitude" Type="decimal" Nullable="true" />
+    <Property Name="LastConnectedTime" Type="datetime" Nullable="true" />
+    <Property Name="PrinterMACId" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="DeviceBlocks">
+    <Key>
+      <PropertyRef Name="DeviceBlockId" />
+    </Key>
+    <Property Name="DeviceBlockId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceId" Type="int" Nullable="false" />
+    <Property Name="ReasonForBlocking" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BlockedByUserId" Type="int" Nullable="false" />
+    <Property Name="BlockedForUserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeviceEvents">
+    <Key>
+      <PropertyRef Name="DeviceEventId" />
+    </Key>
+    <Property Name="DeviceEventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceId" Type="int" Nullable="false" />
+    <Property Name="EventName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventDateTime" Type="datetime" Nullable="false" />
+    <Property Name="EventSource" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AssignedUserId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Receipts">
+    <Key>
+      <PropertyRef Name="ReceiptId" />
+    </Key>
+    <Property Name="ReceiptId" Type="int" Nullable="false" />
+    <Property Name="ReceiptNo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ReceiptDt" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="ReceiptAmt" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Mode" Type="varchar" Nullable="true" MaxLength="1" />
+    <Property Name="InstrumentAmt" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="InstrumentNo" Type="decimal" Nullable="true" Precision="10" Scale="0" />
+    <Property Name="InstrumentDt" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="BankID" Type="decimal" Nullable="true" Precision="5" Scale="0" />
+    <Property Name="BranchName" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="MICR" Type="decimal" Nullable="true" Precision="9" Scale="0" />
+    <Property Name="Pay_Clear_location" Type="varchar" Nullable="true" MaxLength="25" />
+    <Property Name="Remitted_By" Type="decimal" Nullable="true" Precision="2" Scale="0" />
+    <Property Name="Remitter_Name" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Remitter_Relationship" Type="decimal" Nullable="true" Precision="2" Scale="0" />
+    <Property Name="PanNo" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="Rec_Category" Type="decimal" Nullable="true" Precision="2" Scale="0" />
+    <Property Name="BranchCode" Type="varchar" Nullable="true" MaxLength="4" />
+    <Property Name="MachineID" Type="decimal" Nullable="true" Precision="5" Scale="0" />
+    <Property Name="GPSLocation" Type="varchar" Nullable="true" MaxLength="14" />
+    <Property Name="CollectorUserId" Type="int" Nullable="true" />
+    <Property Name="Gen_Datetime" Type="datetime" Nullable="true" />
+    <Property Name="CustomerType" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReceiptCancels">
+    <Key>
+      <PropertyRef Name="ReceiptNo" />
+    </Key>
+    <Property Name="ReceiptNo" Type="int" Nullable="false" />
+    <Property Name="ReceiptId" Type="int" Nullable="false" />
+    <Property Name="CancelledOn" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="Reason" Type="decimal" Nullable="true" Precision="2" Scale="0" />
+    <Property Name="UserID" Type="decimal" Nullable="true" Precision="5" Scale="0" />
+    <Property Name="Gen_Datetime" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="Tower_Name" Type="varchar" Nullable="true" MaxLength="14" />
+    <Property Name="Auth_UserID" Type="decimal" Nullable="true" Precision="5" Scale="0" />
+    <Property Name="Auth_On" Type="varchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ReceiptsRepresentations">
+    <Key>
+      <PropertyRef Name="ReceiptsRepresentationId" />
+    </Key>
+    <Property Name="ReceiptsRepresentationId" Type="int" Nullable="false" />
+    <Property Name="ReceiptNo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ReceiptId" Type="int" Nullable="false" />
+    <Property Name="New_ReceiptNo" Type="varchar" Nullable="true" MaxLength="14" />
+    <Property Name="Represented_On" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="UserID" Type="decimal" Nullable="true" Precision="5" Scale="0" />
+    <Property Name="Gen_Datetime" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="GPSLocation" Type="varchar" Nullable="true" MaxLength="14" />
+  </EntityType>
+  <EntityType Name="ReceiptDetails">
+    <Key>
+      <PropertyRef Name="ReceiptDetailId" />
+    </Key>
+    <Property Name="ReceiptDetailId" Type="int" Nullable="false" />
+    <Property Name="ReceiptNo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="ContractNo" Type="varchar(max)" Nullable="true" />
+    <Property Name="ReceiptId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReceiptReprints">
+    <Key>
+      <PropertyRef Name="ReceiptReprintId" />
+    </Key>
+    <Property Name="ReceiptReprintId" Type="int" Nullable="false" />
+    <Property Name="ReceiptId" Type="int" Nullable="false" />
+    <Property Name="ReceiptNo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Reprinted_On" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="Reason" Type="decimal" Nullable="true" Precision="2" Scale="0" />
+    <Property Name="UserID" Type="int" Nullable="true" />
+    <Property Name="Gen_Datetime" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="GPSLocation" Type="varchar" Nullable="true" MaxLength="14" />
+  </EntityType>
+  <EntityType Name="ReceiptDenominations">
+    <Key>
+      <PropertyRef Name="ReceiptDenominationId" />
+    </Key>
+    <Property Name="ReceiptDenominationId" Type="int" Nullable="false" />
+    <Property Name="ReceiptNo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Denomination" Type="varchar" Nullable="true" MaxLength="5" />
+    <Property Name="Count" Type="decimal" Nullable="true" Precision="4" Scale="0" />
+    <Property Name="ReceiptId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DCRMasters">
+    <Key>
+      <PropertyRef Name="DCRMasterId" />
+    </Key>
+    <Property Name="DCRMasterId" Type="int" Nullable="false" />
+    <Property Name="DCRNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mode" Type="varchar" Nullable="true" MaxLength="1" />
+    <Property Name="Amount" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="UserId" Type="decimal" Nullable="true" Precision="5" Scale="0" />
+    <Property Name="Gen_Datetime" Type="datetime" Nullable="true" />
+    <Property Name="GPSLocation" Type="varchar" Nullable="true" MaxLength="14" />
+    <Property Name="Auth_UserID" Type="decimal" Nullable="true" Precision="5" Scale="0" />
+    <Property Name="Auth_On" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="Status" Type="varchar" Nullable="true" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="DCRReceipts">
+    <Key>
+      <PropertyRef Name="DCRReceiptId" />
+    </Key>
+    <Property Name="DCRReceiptId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DCRMasterId" Type="int" Nullable="false" />
+    <Property Name="ReceiptId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DCSMasters">
+    <Key>
+      <PropertyRef Name="DCSMasterId" />
+    </Key>
+    <Property Name="DCSMasterId" Type="int" Nullable="false" />
+    <Property Name="DCSNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BankCode" Type="varchar" Nullable="true" MaxLength="4" />
+    <Property Name="Mode" Type="varchar" Nullable="true" MaxLength="2" />
+    <Property Name="SlipNo" Type="varchar" Nullable="true" MaxLength="15" />
+    <Property Name="Amount" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="UserId" Type="decimal" Nullable="true" Precision="5" Scale="0" />
+    <Property Name="Gen_Datetime" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="GPSLocation" Type="varchar" Nullable="true" MaxLength="14" />
+  </EntityType>
+  <EntityType Name="DCSDCRs">
+    <Key>
+      <PropertyRef Name="DCSDCRId" />
+    </Key>
+    <Property Name="DCSDCRId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DCSMasterId" Type="int" Nullable="false" />
+    <Property Name="DCRMasterId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeviceLocations">
+    <Key>
+      <PropertyRef Name="DeviceLocationId" />
+    </Key>
+    <Property Name="DeviceLocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceId" Type="int" Nullable="false" />
+    <Property Name="Latitude" Type="decimal" Nullable="false" />
+    <Property Name="Longitude" Type="decimal" Nullable="false" />
+    <Property Name="Altitude" Type="decimal" Nullable="false" />
+    <Property Name="GPSDateTime" Type="datetime" Nullable="false" />
+    <Property Name="ReceivedDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserAttributes">
+    <Key>
+      <PropertyRef Name="UserAttributeId" />
+    </Key>
+    <Property Name="UserAttributeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserThresholds">
+    <Key>
+      <PropertyRef Name="UserThresholdId" />
+    </Key>
+    <Property Name="UserThresholdId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Base" Type="decimal" Nullable="false" />
+    <Property Name="Next" Type="decimal" Nullable="false" />
+    <Property Name="Far" Type="decimal" Nullable="false" />
+    <Property Name="NextPin" Type="int" Nullable="false" />
+    <Property Name="NextPinUsed" Type="bit" Nullable="false" />
+    <Property Name="FarPin" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FarPinUsed" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContractReceiptMessages">
+    <Key>
+      <PropertyRef Name="ContractReceiptMessageId" />
+    </Key>
+    <Property Name="ContractReceiptMessageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContractId" Type="int" Nullable="false" />
+    <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ValidFrom" Type="datetime" Nullable="false" />
+    <Property Name="ValidTo" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserNotifications">
+    <Key>
+      <PropertyRef Name="UserNotificationId" />
+    </Key>
+    <Property Name="UserNotificationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="NoticationType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsCommunicated" Type="bit" Nullable="false" />
+    <Property Name="ValidFrom" Type="datetime" Nullable="false" />
+    <Property Name="ValidTill" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TradeAdvanceMasters">
+    <Key>
+      <PropertyRef Name="TA_Link_No" />
+    </Key>
+    <Property Name="TA_Link_No" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Beneficiary_Name" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="varchar" Nullable="true" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="UpdateReasons">
+    <Key>
+      <PropertyRef Name="UpdateReasonId" />
+    </Key>
+    <Property Name="UpdateReasonId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReasonGroup" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ReasonType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Noterequired" Type="bit" Nullable="false" />
+    <Property Name="PhotoRequired" Type="bit" Nullable="false" />
+    <Property Name="SignatureRequired" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Updates">
+    <Key>
+      <PropertyRef Name="UpdateId" />
+    </Key>
+    <Property Name="UpdateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UpdateReasonId" Type="int" Nullable="false" />
+    <Property Name="UpdateValue" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DeviceId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReceiptImages">
+    <Key>
+      <PropertyRef Name="ReceiptImageId" />
+    </Key>
+    <Property Name="ReceiptImageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReceiptId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ImageData" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ImageDateTime" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CategoryGroups">
+    <Key>
+      <PropertyRef Name="CategoryGroupId" />
+    </Key>
+    <Property Name="CategoryGroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CategoryItems">
+    <Key>
+      <PropertyRef Name="CategoryItemId" />
+    </Key>
+    <Property Name="CategoryItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryGroupId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Code" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="TravelDebits">
+    <Key>
+      <PropertyRef Name="TravelDebitId" />
+    </Key>
+    <Property Name="TravelDebitId" Type="int" Nullable="false" />
+    <Property Name="VoucherNo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Feedback" Type="decimal" Nullable="true" Precision="2" Scale="0" />
+    <Property Name="Amount" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="Date" Type="varchar" Nullable="true" MaxLength="15" />
+    <Property Name="CheckedWith" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="RelationShip" Type="decimal" Nullable="true" Precision="2" Scale="0" />
+    <Property Name="ReceiptNo" Type="varchar" Nullable="true" MaxLength="15" />
+    <Property Name="UserID" Type="decimal" Nullable="true" Precision="5" Scale="0" />
+    <Property Name="Gen_Datetime" Type="varchar" Nullable="true" MaxLength="15" />
+    <Property Name="GPSLocation" Type="varchar" Nullable="true" MaxLength="14" />
+  </EntityType>
+  <EntityType Name="TravelDebitDetails">
+    <Key>
+      <PropertyRef Name="TravelDebitDetailId" />
+    </Key>
+    <Property Name="TravelDebitDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TravelDebitId" Type="int" Nullable="false" />
+    <Property Name="ContractNo" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="UserUserUserRole">
+    <End Role="User" Type="FCMSEntityModel.Store.Users" Multiplicity="1" />
+    <End Role="UserUserRole" Type="FCMSEntityModel.Store.UserUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserUserRole">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserRoleUserUserRole">
+    <End Role="UserRole" Type="FCMSEntityModel.Store.UserRoles" Multiplicity="1" />
+    <End Role="UserUserRole" Type="FCMSEntityModel.Store.UserUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole">
+        <PropertyRef Name="UserRoleId" />
+      </Principal>
+      <Dependent Role="UserUserRole">
+        <PropertyRef Name="UserRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StateBank">
+    <End Role="State" Type="FCMSEntityModel.Store.States" Multiplicity="1" />
+    <End Role="Bank" Type="FCMSEntityModel.Store.Banks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="Bank">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CustomerCustomerCustomInfo">
+    <End Role="Customer" Type="FCMSEntityModel.Store.Customers" Multiplicity="1" />
+    <End Role="CustomerCustomInfo" Type="FCMSEntityModel.Store.CustomerCustomInfoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="CustomerCustomInfo">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CustomerContract">
+    <End Role="Customer" Type="FCMSEntityModel.Store.Customers" Multiplicity="1" />
+    <End Role="Contract" Type="FCMSEntityModel.Store.Contracts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="Contract">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CustomerGuarantor">
+    <End Role="Customer" Type="FCMSEntityModel.Store.Customers" Multiplicity="1" />
+    <End Role="Guarantor" Type="FCMSEntityModel.Store.Guarantors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="Guarantor">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ContractGuarantor">
+    <End Role="Contract" Type="FCMSEntityModel.Store.Contracts" Multiplicity="1" />
+    <End Role="Guarantor" Type="FCMSEntityModel.Store.Guarantors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contract">
+        <PropertyRef Name="ContractId" />
+      </Principal>
+      <Dependent Role="Guarantor">
+        <PropertyRef Name="ContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ContractContractCustomInfo">
+    <End Role="Contract" Type="FCMSEntityModel.Store.Contracts" Multiplicity="1" />
+    <End Role="ContractCustomInfo" Type="FCMSEntityModel.Store.ContractCustomInfoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contract">
+        <PropertyRef Name="ContractId" />
+      </Principal>
+      <Dependent Role="ContractCustomInfo">
+        <PropertyRef Name="ContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BranchContract">
+    <End Role="Branch" Type="FCMSEntityModel.Store.Branches" Multiplicity="1" />
+    <End Role="Contract" Type="FCMSEntityModel.Store.Contracts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="BranchId" />
+      </Principal>
+      <Dependent Role="Contract">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DeviceDeviceBlock">
+    <End Role="Device" Type="FCMSEntityModel.Store.Devices" Multiplicity="1" />
+    <End Role="DeviceBlock" Type="FCMSEntityModel.Store.DeviceBlocks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="DeviceId" />
+      </Principal>
+      <Dependent Role="DeviceBlock">
+        <PropertyRef Name="DeviceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BranchDevice">
+    <End Role="Branch" Type="FCMSEntityModel.Store.Branches" Multiplicity="1" />
+    <End Role="Device" Type="FCMSEntityModel.Store.Devices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="BranchId" />
+      </Principal>
+      <Dependent Role="Device">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DeviceDeviceEvent">
+    <End Role="Device" Type="FCMSEntityModel.Store.Devices" Multiplicity="1" />
+    <End Role="DeviceEvent" Type="FCMSEntityModel.Store.DeviceEvents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="DeviceId" />
+      </Principal>
+      <Dependent Role="DeviceEvent">
+        <PropertyRef Name="DeviceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserDevice">
+    <End Role="User" Type="FCMSEntityModel.Store.Users" Multiplicity="1" />
+    <End Role="Device" Type="FCMSEntityModel.Store.Devices" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Device">
+        <PropertyRef Name="DeviceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReceiptReceiptCancel">
+    <End Role="Receipt" Type="FCMSEntityModel.Store.Receipts" Multiplicity="1" />
+    <End Role="ReceiptCancel" Type="FCMSEntityModel.Store.ReceiptCancels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Receipt">
+        <PropertyRef Name="ReceiptId" />
+      </Principal>
+      <Dependent Role="ReceiptCancel">
+        <PropertyRef Name="ReceiptId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReceiptReceiptsRepresentation">
+    <End Role="Receipt" Type="FCMSEntityModel.Store.Receipts" Multiplicity="1" />
+    <End Role="ReceiptsRepresentation" Type="FCMSEntityModel.Store.ReceiptsRepresentations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Receipt">
+        <PropertyRef Name="ReceiptId" />
+      </Principal>
+      <Dependent Role="ReceiptsRepresentation">
+        <PropertyRef Name="ReceiptId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReceiptReceiptDetail">
+    <End Role="Receipt" Type="FCMSEntityModel.Store.Receipts" Multiplicity="1" />
+    <End Role="ReceiptDetail" Type="FCMSEntityModel.Store.ReceiptDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Receipt">
+        <PropertyRef Name="ReceiptId" />
+      </Principal>
+      <Dependent Role="ReceiptDetail">
+        <PropertyRef Name="ReceiptId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReceiptReceiptReprint">
+    <End Role="Receipt" Type="FCMSEntityModel.Store.Receipts" Multiplicity="1" />
+    <End Role="ReceiptReprint" Type="FCMSEntityModel.Store.ReceiptReprints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Receipt">
+        <PropertyRef Name="ReceiptId" />
+      </Principal>
+      <Dependent Role="ReceiptReprint">
+        <PropertyRef Name="ReceiptId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReceiptReceiptDenomination">
+    <End Role="Receipt" Type="FCMSEntityModel.Store.Receipts" Multiplicity="1" />
+    <End Role="ReceiptDenomination" Type="FCMSEntityModel.Store.ReceiptDenominations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Receipt">
+        <PropertyRef Name="ReceiptId" />
+      </Principal>
+      <Dependent Role="ReceiptDenomination">
+        <PropertyRef Name="ReceiptId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReceiptDCRReceipt">
+    <End Role="Receipt" Type="FCMSEntityModel.Store.Receipts" Multiplicity="1" />
+    <End Role="DCRReceipt" Type="FCMSEntityModel.Store.DCRReceipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Receipt">
+        <PropertyRef Name="ReceiptId" />
+      </Principal>
+      <Dependent Role="DCRReceipt">
+        <PropertyRef Name="ReceiptId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DCRMasterDCRReceipt">
+    <End Role="DCRMaster" Type="FCMSEntityModel.Store.DCRMasters" Multiplicity="1" />
+    <End Role="DCRReceipt" Type="FCMSEntityModel.Store.DCRReceipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DCRMaster">
+        <PropertyRef Name="DCRMasterId" />
+      </Principal>
+      <Dependent Role="DCRReceipt">
+        <PropertyRef Name="DCRMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DCSMasterDCSDCR">
+    <End Role="DCSMaster" Type="FCMSEntityModel.Store.DCSMasters" Multiplicity="1" />
+    <End Role="DCSDCR" Type="FCMSEntityModel.Store.DCSDCRs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DCSMaster">
+        <PropertyRef Name="DCSMasterId" />
+      </Principal>
+      <Dependent Role="DCSDCR">
+        <PropertyRef Name="DCSMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DCRMasterDCSDCR">
+    <End Role="DCRMaster" Type="FCMSEntityModel.Store.DCRMasters" Multiplicity="1" />
+    <End Role="DCSDCR" Type="FCMSEntityModel.Store.DCSDCRs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DCRMaster">
+        <PropertyRef Name="DCRMasterId" />
+      </Principal>
+      <Dependent Role="DCSDCR">
+        <PropertyRef Name="DCRMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DeviceDeviceLocation">
+    <End Role="Device" Type="FCMSEntityModel.Store.Devices" Multiplicity="1" />
+    <End Role="DeviceLocation" Type="FCMSEntityModel.Store.DeviceLocations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="DeviceId" />
+      </Principal>
+      <Dependent Role="DeviceLocation">
+        <PropertyRef Name="DeviceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserAttribute">
+    <End Role="User" Type="FCMSEntityModel.Store.Users" Multiplicity="1" />
+    <End Role="UserAttribute" Type="FCMSEntityModel.Store.UserAttributes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserAttribute">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BranchUser">
+    <End Role="Branch" Type="FCMSEntityModel.Store.Branches" Multiplicity="1" />
+    <End Role="User" Type="FCMSEntityModel.Store.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="BranchId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StateBranch">
+    <End Role="State" Type="FCMSEntityModel.Store.States" Multiplicity="1" />
+    <End Role="Branch" Type="FCMSEntityModel.Store.Branches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="Branch">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserThreshold">
+    <End Role="User" Type="FCMSEntityModel.Store.Users" Multiplicity="1" />
+    <End Role="UserThreshold" Type="FCMSEntityModel.Store.UserThresholds" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserThreshold">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ContractContractReceiptMessage">
+    <End Role="Contract" Type="FCMSEntityModel.Store.Contracts" Multiplicity="1" />
+    <End Role="ContractReceiptMessage" Type="FCMSEntityModel.Store.ContractReceiptMessages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contract">
+        <PropertyRef Name="ContractId" />
+      </Principal>
+      <Dependent Role="ContractReceiptMessage">
+        <PropertyRef Name="ContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserUserNotification">
+    <End Role="User" Type="FCMSEntityModel.Store.Users" Multiplicity="1" />
+    <End Role="UserNotification" Type="FCMSEntityModel.Store.UserNotifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserNotification">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UpdateReasonUpdate">
+    <End Role="UpdateReason" Type="FCMSEntityModel.Store.UpdateReasons" Multiplicity="1" />
+    <End Role="Update" Type="FCMSEntityModel.Store.Updates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UpdateReason">
+        <PropertyRef Name="UpdateReasonId" />
+      </Principal>
+      <Dependent Role="Update">
+        <PropertyRef Name="UpdateReasonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DeviceUpdate">
+    <End Role="Device" Type="FCMSEntityModel.Store.Devices" Multiplicity="1" />
+    <End Role="Update" Type="FCMSEntityModel.Store.Updates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="DeviceId" />
+      </Principal>
+      <Dependent Role="Update">
+        <PropertyRef Name="DeviceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReceiptReceiptImage">
+    <End Role="Receipt" Type="FCMSEntityModel.Store.Receipts" Multiplicity="1" />
+    <End Role="ReceiptImage" Type="FCMSEntityModel.Store.ReceiptImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Receipt">
+        <PropertyRef Name="ReceiptId" />
+      </Principal>
+      <Dependent Role="ReceiptImage">
+        <PropertyRef Name="ReceiptId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoryGroupCategoryItem">
+    <End Role="CategoryGroup" Type="FCMSEntityModel.Store.CategoryGroups" Multiplicity="1" />
+    <End Role="CategoryItem" Type="FCMSEntityModel.Store.CategoryItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryGroup">
+        <PropertyRef Name="CategoryGroupId" />
+      </Principal>
+      <Dependent Role="CategoryItem">
+        <PropertyRef Name="CategoryGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TravelDebitTravelDebitDetail">
+    <End Role="TravelDebit" Type="FCMSEntityModel.Store.TravelDebits" Multiplicity="1" />
+    <End Role="TravelDebitDetail" Type="FCMSEntityModel.Store.TravelDebitDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TravelDebit">
+        <PropertyRef Name="TravelDebitId" />
+      </Principal>
+      <Dependent Role="TravelDebitDetail">
+        <PropertyRef Name="TravelDebitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FCMSEntityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FCMSEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="Users" EntityType="FCMSEntityModel.User" />
+          <EntitySet Name="UserRoles" EntityType="FCMSEntityModel.UserRole" />
+          <EntitySet Name="UserUserRoles" EntityType="FCMSEntityModel.UserUserRole" />
+          <AssociationSet Name="UserUserUserRole" Association="FCMSEntityModel.UserUserUserRole">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserUserRole" EntitySet="UserUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="UserRoleUserUserRole" Association="FCMSEntityModel.UserRoleUserUserRole">
+            <End Role="UserRole" EntitySet="UserRoles" />
+            <End Role="UserUserRole" EntitySet="UserUserRoles" />
+          </AssociationSet>
+          <EntitySet Name="States" EntityType="FCMSEntityModel.State" />
+          <EntitySet Name="Banks" EntityType="FCMSEntityModel.Bank" />
+          <EntitySet Name="Branches" EntityType="FCMSEntityModel.Branch" />
+          <AssociationSet Name="StateBank" Association="FCMSEntityModel.StateBank">
+            <End Role="State" EntitySet="States" />
+            <End Role="Bank" EntitySet="Banks" />
+          </AssociationSet>
+          <EntitySet Name="Customers" EntityType="FCMSEntityModel.Customer" />
+          <EntitySet Name="CustomerCustomInfoes" EntityType="FCMSEntityModel.CustomerCustomInfo" />
+          <AssociationSet Name="CustomerCustomerCustomInfo" Association="FCMSEntityModel.CustomerCustomerCustomInfo">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="CustomerCustomInfo" EntitySet="CustomerCustomInfoes" />
+          </AssociationSet>
+          <EntitySet Name="Contracts" EntityType="FCMSEntityModel.Contract" />
+          <AssociationSet Name="CustomerContract" Association="FCMSEntityModel.CustomerContract">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Contract" EntitySet="Contracts" />
+          </AssociationSet>
+          <EntitySet Name="Guarantors" EntityType="FCMSEntityModel.Guarantor" />
+          <AssociationSet Name="CustomerGuarantor" Association="FCMSEntityModel.CustomerGuarantor">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Guarantor" EntitySet="Guarantors" />
+          </AssociationSet>
+          <AssociationSet Name="ContractGuarantor" Association="FCMSEntityModel.ContractGuarantor">
+            <End Role="Contract" EntitySet="Contracts" />
+            <End Role="Guarantor" EntitySet="Guarantors" />
+          </AssociationSet>
+          <EntitySet Name="ContractCustomInfoes" EntityType="FCMSEntityModel.ContractCustomInfo" />
+          <AssociationSet Name="ContractContractCustomInfo" Association="FCMSEntityModel.ContractContractCustomInfo">
+            <End Role="Contract" EntitySet="Contracts" />
+            <End Role="ContractCustomInfo" EntitySet="ContractCustomInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="BranchContract" Association="FCMSEntityModel.BranchContract">
+            <End Role="Branch" EntitySet="Branches" />
+            <End Role="Contract" EntitySet="Contracts" />
+          </AssociationSet>
+          <EntitySet Name="Devices" EntityType="FCMSEntityModel.Device" />
+          <EntitySet Name="DeviceBlocks" EntityType="FCMSEntityModel.DeviceBlock" />
+          <AssociationSet Name="DeviceDeviceBlock" Association="FCMSEntityModel.DeviceDeviceBlock">
+            <End Role="Device" EntitySet="Devices" />
+            <End Role="DeviceBlock" EntitySet="DeviceBlocks" />
+          </AssociationSet>
+          <AssociationSet Name="BranchDevice" Association="FCMSEntityModel.BranchDevice">
+            <End Role="Branch" EntitySet="Branches" />
+            <End Role="Device" EntitySet="Devices" />
+          </AssociationSet>
+          <EntitySet Name="DeviceEvents" EntityType="FCMSEntityModel.DeviceEvent" />
+          <AssociationSet Name="DeviceDeviceEvent" Association="FCMSEntityModel.DeviceDeviceEvent">
+            <End Role="Device" EntitySet="Devices" />
+            <End Role="DeviceEvent" EntitySet="DeviceEvents" />
+          </AssociationSet>
+          <AssociationSet Name="UserDevice" Association="FCMSEntityModel.UserDevice">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Device" EntitySet="Devices" />
+          </AssociationSet>
+          <EntitySet Name="Receipts" EntityType="FCMSEntityModel.Receipt" />
+          <EntitySet Name="ReceiptCancels" EntityType="FCMSEntityModel.ReceiptCancel" />
+          <AssociationSet Name="ReceiptReceiptCancel" Association="FCMSEntityModel.ReceiptReceiptCancel">
+            <End Role="Receipt" EntitySet="Receipts" />
+            <End Role="ReceiptCancel" EntitySet="ReceiptCancels" />
+          </AssociationSet>
+          <EntitySet Name="ReceiptsRepresentations" EntityType="FCMSEntityModel.ReceiptsRepresentation" />
+          <AssociationSet Name="ReceiptReceiptsRepresentation" Association="FCMSEntityModel.ReceiptReceiptsRepresentation">
+            <End Role="Receipt" EntitySet="Receipts" />
+            <End Role="ReceiptsRepresentation" EntitySet="ReceiptsRepresentations" />
+          </AssociationSet>
+          <EntitySet Name="ReceiptDetails" EntityType="FCMSEntityModel.ReceiptDetail" />
+          <AssociationSet Name="ReceiptReceiptDetail" Association="FCMSEntityModel.ReceiptReceiptDetail">
+            <End Role="Receipt" EntitySet="Receipts" />
+            <End Role="ReceiptDetail" EntitySet="ReceiptDetails" />
+          </AssociationSet>
+          <EntitySet Name="ReceiptReprints" EntityType="FCMSEntityModel.ReceiptReprint" />
+          <AssociationSet Name="ReceiptReceiptReprint" Association="FCMSEntityModel.ReceiptReceiptReprint">
+            <End Role="Receipt" EntitySet="Receipts" />
+            <End Role="ReceiptReprint" EntitySet="ReceiptReprints" />
+          </AssociationSet>
+          <EntitySet Name="ReceiptDenominations" EntityType="FCMSEntityModel.ReceiptDenomination" />
+          <AssociationSet Name="ReceiptReceiptDenomination" Association="FCMSEntityModel.ReceiptReceiptDenomination">
+            <End Role="Receipt" EntitySet="Receipts" />
+            <End Role="ReceiptDenomination" EntitySet="ReceiptDenominations" />
+          </AssociationSet>
+          <EntitySet Name="DCRMasters" EntityType="FCMSEntityModel.DCRMaster" />
+          <EntitySet Name="DCRReceipts" EntityType="FCMSEntityModel.DCRReceipt" />
+          <AssociationSet Name="ReceiptDCRReceipt" Association="FCMSEntityModel.ReceiptDCRReceipt">
+            <End Role="Receipt" EntitySet="Receipts" />
+            <End Role="DCRReceipt" EntitySet="DCRReceipts" />
+          </AssociationSet>
+          <AssociationSet Name="DCRMasterDCRReceipt" Association="FCMSEntityModel.DCRMasterDCRReceipt">
+            <End Role="DCRMaster" EntitySet="DCRMasters" />
+            <End Role="DCRReceipt" EntitySet="DCRReceipts" />
+          </AssociationSet>
+          <EntitySet Name="DCSMasters" EntityType="FCMSEntityModel.DCSMaster" />
+          <EntitySet Name="DCSDCRs" EntityType="FCMSEntityModel.DCSDCR" />
+          <AssociationSet Name="DCSMasterDCSDCR" Association="FCMSEntityModel.DCSMasterDCSDCR">
+            <End Role="DCSMaster" EntitySet="DCSMasters" />
+            <End Role="DCSDCR" EntitySet="DCSDCRs" />
+          </AssociationSet>
+          <AssociationSet Name="DCRMasterDCSDCR" Association="FCMSEntityModel.DCRMasterDCSDCR">
+            <End Role="DCRMaster" EntitySet="DCRMasters" />
+            <End Role="DCSDCR" EntitySet="DCSDCRs" />
+          </AssociationSet>
+          <EntitySet Name="DeviceLocations" EntityType="FCMSEntityModel.DeviceLocation" />
+          <AssociationSet Name="DeviceDeviceLocation" Association="FCMSEntityModel.DeviceDeviceLocation">
+            <End Role="Device" EntitySet="Devices" />
+            <End Role="DeviceLocation" EntitySet="DeviceLocations" />
+          </AssociationSet>
+          <EntitySet Name="UserAttributes" EntityType="FCMSEntityModel.UserAttribute" />
+          <AssociationSet Name="UserUserAttribute" Association="FCMSEntityModel.UserUserAttribute">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserAttribute" EntitySet="UserAttributes" />
+          </AssociationSet>
+          <AssociationSet Name="BranchUser" Association="FCMSEntityModel.BranchUser">
+            <End Role="Branch" EntitySet="Branches" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="StateBranch" Association="FCMSEntityModel.StateBranch">
+            <End Role="State" EntitySet="States" />
+            <End Role="Branch" EntitySet="Branches" />
+          </AssociationSet>
+          <EntitySet Name="UserThresholds" EntityType="FCMSEntityModel.UserThreshold" />
+          <AssociationSet Name="UserUserThreshold" Association="FCMSEntityModel.UserUserThreshold">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserThreshold" EntitySet="UserThresholds" />
+          </AssociationSet>
+          <EntitySet Name="ContractReceiptMessages" EntityType="FCMSEntityModel.ContractReceiptMessage" />
+          <AssociationSet Name="ContractContractReceiptMessage" Association="FCMSEntityModel.ContractContractReceiptMessage">
+            <End Role="Contract" EntitySet="Contracts" />
+            <End Role="ContractReceiptMessage" EntitySet="ContractReceiptMessages" />
+          </AssociationSet>
+          <EntitySet Name="UserNotifications" EntityType="FCMSEntityModel.UserNotification" />
+          <AssociationSet Name="UserUserNotification" Association="FCMSEntityModel.UserUserNotification">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserNotification" EntitySet="UserNotifications" />
+          </AssociationSet>
+          <EntitySet Name="TradeAdvanceMasters" EntityType="FCMSEntityModel.TradeAdvanceMaster" />
+          <EntitySet Name="UpdateReasons" EntityType="FCMSEntityModel.UpdateReason" />
+          <EntitySet Name="Updates" EntityType="FCMSEntityModel.Update" />
+          <AssociationSet Name="UpdateReasonUpdate" Association="FCMSEntityModel.UpdateReasonUpdate">
+            <End Role="UpdateReason" EntitySet="UpdateReasons" />
+            <End Role="Update" EntitySet="Updates" />
+          </AssociationSet>
+          <AssociationSet Name="DeviceUpdate" Association="FCMSEntityModel.DeviceUpdate">
+            <End Role="Device" EntitySet="Devices" />
+            <End Role="Update" EntitySet="Updates" />
+          </AssociationSet>
+          <EntitySet Name="ReceiptImages" EntityType="FCMSEntityModel.ReceiptImage" />
+          <AssociationSet Name="ReceiptReceiptImage" Association="FCMSEntityModel.ReceiptReceiptImage">
+            <End Role="Receipt" EntitySet="Receipts" />
+            <End Role="ReceiptImage" EntitySet="ReceiptImages" />
+          </AssociationSet>
+          <EntitySet Name="CategoryGroups" EntityType="FCMSEntityModel.CategoryGroup" />
+          <EntitySet Name="CategoryItems" EntityType="FCMSEntityModel.CategoryItem" />
+          <AssociationSet Name="CategoryGroupCategoryItem" Association="FCMSEntityModel.CategoryGroupCategoryItem">
+            <End Role="CategoryGroup" EntitySet="CategoryGroups" />
+            <End Role="CategoryItem" EntitySet="CategoryItems" />
+          </AssociationSet>
+          <EntitySet Name="TravelDebits" EntityType="FCMSEntityModel.TravelDebit" />
+          <EntitySet Name="TravelDebitDetails" EntityType="FCMSEntityModel.TravelDebitDetail" />
+          <AssociationSet Name="TravelDebitTravelDebitDetail" Association="FCMSEntityModel.TravelDebitTravelDebitDetail">
+            <End Role="TravelDebit" EntitySet="TravelDebits" />
+            <End Role="TravelDebitDetail" EntitySet="TravelDebitDetails" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="UserUserRoles" Relationship="FCMSEntityModel.UserUserUserRole" FromRole="User" ToRole="UserUserRole" />
+          <Property Name="EmployeeCode" Type="String" Nullable="false" />
+          <Property Name="DeviceId" Type="Int32" Nullable="true" />
+          <Property Name="PassWordHash" Type="String" Nullable="false" />
+          <NavigationProperty Name="Devices" Relationship="FCMSEntityModel.UserDevice" FromRole="User" ToRole="Device" />
+          <NavigationProperty Name="UserAttributes" Relationship="FCMSEntityModel.UserUserAttribute" FromRole="User" ToRole="UserAttribute" />
+          <Property Name="BranchId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Branch" Relationship="FCMSEntityModel.BranchUser" FromRole="User" ToRole="Branch" />
+          <Property Name="Locked" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="UserThresholds" Relationship="FCMSEntityModel.UserUserThreshold" FromRole="User" ToRole="UserThreshold" />
+          <Property Name="Blocked" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="UserNotifications" Relationship="FCMSEntityModel.UserUserNotification" FromRole="User" ToRole="UserNotification" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleId" />
+          </Key>
+          <Property Name="UserRoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="UserUserRoles" Relationship="FCMSEntityModel.UserRoleUserUserRole" FromRole="UserRole" ToRole="UserUserRole" />
+          <Property Name="Code" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserUserRole">
+          <Key>
+            <PropertyRef Name="UserUserRoleId" />
+          </Key>
+          <Property Name="UserUserRoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="UserRoleId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="FCMSEntityModel.UserUserUserRole" FromRole="UserUserRole" ToRole="User" />
+          <NavigationProperty Name="UserRole" Relationship="FCMSEntityModel.UserRoleUserUserRole" FromRole="UserUserRole" ToRole="UserRole" />
+        </EntityType>
+        <Association Name="UserUserUserRole">
+          <End Type="FCMSEntityModel.User" Role="User" Multiplicity="1" />
+          <End Type="FCMSEntityModel.UserUserRole" Role="UserUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserUserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserRoleUserUserRole">
+          <End Type="FCMSEntityModel.UserRole" Role="UserRole" Multiplicity="1" />
+          <End Type="FCMSEntityModel.UserUserRole" Role="UserUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserRole">
+              <PropertyRef Name="UserRoleId" />
+            </Principal>
+            <Dependent Role="UserUserRole">
+              <PropertyRef Name="UserRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Banks" Relationship="FCMSEntityModel.StateBank" FromRole="State" ToRole="Bank" />
+          <Property Name="Code" Type="String" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Country" Type="String" Nullable="false" />
+          <NavigationProperty Name="Branches" Relationship="FCMSEntityModel.StateBranch" FromRole="State" ToRole="Branch" />
+        </EntityType>
+        <EntityType Name="Bank">
+          <Key>
+            <PropertyRef Name="BankId" />
+          </Key>
+          <Property Name="BankId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="State" Relationship="FCMSEntityModel.StateBank" FromRole="Bank" ToRole="State" />
+          <Property Name="Code" Type="String" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="IFCSCode" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="BranchId" />
+          </Key>
+          <Property Name="BranchId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Contracts" Relationship="FCMSEntityModel.BranchContract" FromRole="Branch" ToRole="Contract" />
+          <NavigationProperty Name="Devices" Relationship="FCMSEntityModel.BranchDevice" FromRole="Branch" ToRole="Device" />
+          <NavigationProperty Name="Users" Relationship="FCMSEntityModel.BranchUser" FromRole="Branch" ToRole="User" />
+          <Property Name="StateId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Address1" Type="String" Nullable="false" />
+          <Property Name="Address2" Type="String" Nullable="false" />
+          <Property Name="Address3" Type="String" Nullable="false" />
+          <Property Name="Address4" Type="String" Nullable="false" />
+          <Property Name="City" Type="String" Nullable="false" />
+          <Property Name="PinCode" Type="String" Nullable="false" />
+          <Property Name="PhoneCode" Type="String" Nullable="false" />
+          <Property Name="PhoneNo" Type="String" Nullable="false" />
+          <NavigationProperty Name="State" Relationship="FCMSEntityModel.StateBranch" FromRole="Branch" ToRole="State" />
+        </EntityType>
+        <Association Name="StateBank">
+          <End Type="FCMSEntityModel.State" Role="State" Multiplicity="1" />
+          <End Type="FCMSEntityModel.Bank" Role="Bank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="Bank">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerCode" Type="String" Nullable="false" />
+          <Property Name="Salutation" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PinCode" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="PanNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ContractCount" Type="Int32" />
+          <Property Name="BranchCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CustomerCustomInfoes" Relationship="FCMSEntityModel.CustomerCustomerCustomInfo" FromRole="Customer" ToRole="CustomerCustomInfo" />
+          <NavigationProperty Name="Contracts" Relationship="FCMSEntityModel.CustomerContract" FromRole="Customer" ToRole="Contract" />
+          <NavigationProperty Name="Guarantors" Relationship="FCMSEntityModel.CustomerGuarantor" FromRole="Customer" ToRole="Guarantor" />
+          <Property Name="GPSLatitude" Type="Decimal" Nullable="true" />
+          <Property Name="GPSLongitude" Type="Decimal" Nullable="true" />
+        </EntityType>
+        <EntityType Name="CustomerCustomInfo">
+          <Key>
+            <PropertyRef Name="CustomerCustomInfoId" />
+          </Key>
+          <Property Name="CustomerCustomInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="FCMSEntityModel.CustomerCustomerCustomInfo" FromRole="CustomerCustomInfo" ToRole="Customer" />
+        </EntityType>
+        <Association Name="CustomerCustomerCustomInfo">
+          <End Type="FCMSEntityModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="FCMSEntityModel.CustomerCustomInfo" Role="CustomerCustomInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="CustomerCustomInfo">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Contract">
+          <Key>
+            <PropertyRef Name="ContractId" />
+          </Key>
+          <Property Name="ContractId" Type="Int32" Nullable="false" />
+          <Property Name="ContractNo" Type="String" Nullable="false" />
+          <Property Name="BranchId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="ContractDt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceDt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceAmt" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FinAmt" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FinCharges" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Rate" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="LastDueDt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Product" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Bus_Done_By" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Brand" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Division" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customer" Relationship="FCMSEntityModel.CustomerContract" FromRole="Contract" ToRole="Customer" />
+          <NavigationProperty Name="Guarantors" Relationship="FCMSEntityModel.ContractGuarantor" FromRole="Contract" ToRole="Guarantor" />
+          <NavigationProperty Name="ContractCustomInfoes" Relationship="FCMSEntityModel.ContractContractCustomInfo" FromRole="Contract" ToRole="ContractCustomInfo" />
+          <NavigationProperty Name="Branch" Relationship="FCMSEntityModel.BranchContract" FromRole="Contract" ToRole="Branch" />
+          <NavigationProperty Name="ContractReceiptMessages" Relationship="FCMSEntityModel.ContractContractReceiptMessage" FromRole="Contract" ToRole="ContractReceiptMessage" />
+        </EntityType>
+        <Association Name="CustomerContract">
+          <End Type="FCMSEntityModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="FCMSEntityModel.Contract" Role="Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Guarantor">
+          <Key>
+            <PropertyRef Name="GuarantorId" />
+          </Key>
+          <Property Name="GuarantorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContractId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="FCMSEntityModel.CustomerGuarantor" FromRole="Guarantor" ToRole="Customer" />
+          <NavigationProperty Name="Contract" Relationship="FCMSEntityModel.ContractGuarantor" FromRole="Guarantor" ToRole="Contract" />
+        </EntityType>
+        <Association Name="CustomerGuarantor">
+          <End Type="FCMSEntityModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="FCMSEntityModel.Guarantor" Role="Guarantor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Guarantor">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ContractGuarantor">
+          <End Type="FCMSEntityModel.Contract" Role="Contract" Multiplicity="1" />
+          <End Type="FCMSEntityModel.Guarantor" Role="Guarantor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract">
+              <PropertyRef Name="ContractId" />
+            </Principal>
+            <Dependent Role="Guarantor">
+              <PropertyRef Name="ContractId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ContractCustomInfo">
+          <Key>
+            <PropertyRef Name="ContractCustomInfoId" />
+          </Key>
+          <Property Name="ContractCustomInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContractId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" />
+          <Property Name="DataType" Type="String" Nullable="false" />
+          <NavigationProperty Name="Contract" Relationship="FCMSEntityModel.ContractContractCustomInfo" FromRole="ContractCustomInfo" ToRole="Contract" />
+        </EntityType>
+        <Association Name="ContractContractCustomInfo">
+          <End Type="FCMSEntityModel.Contract" Role="Contract" Multiplicity="1" />
+          <End Type="FCMSEntityModel.ContractCustomInfo" Role="ContractCustomInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract">
+              <PropertyRef Name="ContractId" />
+            </Principal>
+            <Dependent Role="ContractCustomInfo">
+              <PropertyRef Name="ContractId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BranchContract">
+          <End Type="FCMSEntityModel.Branch" Role="Branch" Multiplicity="1" />
+          <End Type="FCMSEntityModel.Contract" Role="Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branch">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="BranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="DeviceId" />
+          </Key>
+          <Property Name="DeviceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceTypeName" Type="String" Nullable="false" />
+          <Property Name="BranchId" Type="Int32" Nullable="false" />
+          <Property Name="SerialNo" Type="String" Nullable="false" />
+          <Property Name="IMEI" Type="String" Nullable="false" />
+          <Property Name="IsLocked" Type="String" Nullable="false" />
+          <Property Name="IsBlocked" Type="String" Nullable="false" />
+          <Property Name="IsDeleted" Type="String" Nullable="false" />
+          <NavigationProperty Name="DeviceBlocks" Relationship="FCMSEntityModel.DeviceDeviceBlock" FromRole="Device" ToRole="DeviceBlock" />
+          <Property Name="LastConnectedLatitude" Type="Decimal" Nullable="true" />
+          <Property Name="LastConnectedLongitude" Type="Decimal" Nullable="true" />
+          <Property Name="LastConnectedTime" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Branch" Relationship="FCMSEntityModel.BranchDevice" FromRole="Device" ToRole="Branch" />
+          <Property Name="PrinterMACId" Type="String" Nullable="true" />
+          <NavigationProperty Name="DeviceEvents" Relationship="FCMSEntityModel.DeviceDeviceEvent" FromRole="Device" ToRole="DeviceEvent" />
+          <NavigationProperty Name="User" Relationship="FCMSEntityModel.UserDevice" FromRole="Device" ToRole="User" />
+          <NavigationProperty Name="DeviceLocations" Relationship="FCMSEntityModel.DeviceDeviceLocation" FromRole="Device" ToRole="DeviceLocation" />
+          <NavigationProperty Name="Updates" Relationship="FCMSEntityModel.DeviceUpdate" FromRole="Device" ToRole="Update" />
+        </EntityType>
+        <EntityType Name="DeviceBlock">
+          <Key>
+            <PropertyRef Name="DeviceBlockId" />
+          </Key>
+          <Property Name="DeviceBlockId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceId" Type="Int32" Nullable="false" />
+          <Property Name="ReasonForBlocking" Type="String" Nullable="false" />
+          <Property Name="BlockedByUserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Device" Relationship="FCMSEntityModel.DeviceDeviceBlock" FromRole="DeviceBlock" ToRole="Device" />
+          <Property Name="BlockedForUserId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="DeviceDeviceBlock">
+          <End Type="FCMSEntityModel.Device" Role="Device" Multiplicity="1" />
+          <End Type="FCMSEntityModel.DeviceBlock" Role="DeviceBlock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Device">
+              <PropertyRef Name="DeviceId" />
+            </Principal>
+            <Dependent Role="DeviceBlock">
+              <PropertyRef Name="DeviceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BranchDevice">
+          <End Type="FCMSEntityModel.Branch" Role="Branch" Multiplicity="1" />
+          <End Type="FCMSEntityModel.Device" Role="Device" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branch">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="Device">
+              <PropertyRef Name="BranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DeviceEvent">
+          <Key>
+            <PropertyRef Name="DeviceEventId" />
+          </Key>
+          <Property Name="DeviceEventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceId" Type="Int32" Nullable="false" />
+          <Property Name="EventName" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <Property Name="EventDateTime" Type="DateTime" Nullable="false" />
+          <Property Name="EventSource" Type="String" Nullable="false" />
+          <NavigationProperty Name="Device" Relationship="FCMSEntityModel.DeviceDeviceEvent" FromRole="DeviceEvent" ToRole="Device" />
+          <Property Name="AssignedUserId" Type="Int32" Nullable="true" />
+        </EntityType>
+        <Association Name="DeviceDeviceEvent">
+          <End Type="FCMSEntityModel.Device" Role="Device" Multiplicity="1" />
+          <End Type="FCMSEntityModel.DeviceEvent" Role="DeviceEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Device">
+              <PropertyRef Name="DeviceId" />
+            </Principal>
+            <Dependent Role="DeviceEvent">
+              <PropertyRef Name="DeviceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserDevice">
+          <End Type="FCMSEntityModel.User" Role="User" Multiplicity="1" />
+          <End Type="FCMSEntityModel.Device" Role="Device" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Device">
+              <PropertyRef Name="DeviceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Receipt">
+          <Key>
+            <PropertyRef Name="ReceiptId" />
+          </Key>
+          <Property Name="ReceiptId" Type="Int32" Nullable="false" />
+          <Property Name="ReceiptNo" Type="String" Nullable="false" />
+          <Property Name="ReceiptDt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ReceiptAmt" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Mode" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="InstrumentAmt" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="InstrumentNo" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="InstrumentDt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BankID" Type="Decimal" Precision="5" Scale="0" />
+          <Property Name="BranchName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MICR" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="Pay_Clear_location" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Remitted_By" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="Remitter_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Remitter_Relationship" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="PanNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Rec_Category" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="BranchCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="MachineID" Type="Decimal" Precision="5" Scale="0" />
+          <Property Name="GPSLocation" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="CollectorUserId" Type="Int32" />
+          <Property Name="Gen_Datetime" Type="DateTime" />
+          <NavigationProperty Name="ReceiptCancels" Relationship="FCMSEntityModel.ReceiptReceiptCancel" FromRole="Receipt" ToRole="ReceiptCancel" />
+          <NavigationProperty Name="ReceiptsRepresentations" Relationship="FCMSEntityModel.ReceiptReceiptsRepresentation" FromRole="Receipt" ToRole="ReceiptsRepresentation" />
+          <NavigationProperty Name="ReceiptDetails" Relationship="FCMSEntityModel.ReceiptReceiptDetail" FromRole="Receipt" ToRole="ReceiptDetail" />
+          <NavigationProperty Name="ReceiptReprints" Relationship="FCMSEntityModel.ReceiptReceiptReprint" FromRole="Receipt" ToRole="ReceiptReprint" />
+          <NavigationProperty Name="ReceiptDenominations" Relationship="FCMSEntityModel.ReceiptReceiptDenomination" FromRole="Receipt" ToRole="ReceiptDenomination" />
+          <NavigationProperty Name="DCRReceipts" Relationship="FCMSEntityModel.ReceiptDCRReceipt" FromRole="Receipt" ToRole="DCRReceipt" />
+          <Property Name="CustomerType" Type="String" Nullable="false" />
+          <NavigationProperty Name="ReceiptImages" Relationship="FCMSEntityModel.ReceiptReceiptImage" FromRole="Receipt" ToRole="ReceiptImage" />
+        </EntityType>
+        <EntityType Name="ReceiptCancel">
+          <Key>
+            <PropertyRef Name="ReceiptNo" />
+          </Key>
+          <Property Name="ReceiptNo" Type="Int32" Nullable="false" />
+          <Property Name="ReceiptId" Type="Int32" Nullable="false" />
+          <Property Name="CancelledOn" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Reason" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="UserID" Type="Decimal" Precision="5" Scale="0" />
+          <Property Name="Gen_Datetime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Tower_Name" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Auth_UserID" Type="Decimal" Precision="5" Scale="0" />
+          <Property Name="Auth_On" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Receipt" Relationship="FCMSEntityModel.ReceiptReceiptCancel" FromRole="ReceiptCancel" ToRole="Receipt" />
+        </EntityType>
+        <Association Name="ReceiptReceiptCancel">
+          <End Type="FCMSEntityModel.Receipt" Role="Receipt" Multiplicity="1" />
+          <End Type="FCMSEntityModel.ReceiptCancel" Role="ReceiptCancel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receipt">
+              <PropertyRef Name="ReceiptId" />
+            </Principal>
+            <Dependent Role="ReceiptCancel">
+              <PropertyRef Name="ReceiptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ReceiptsRepresentation">
+          <Key>
+            <PropertyRef Name="ReceiptsRepresentationId" />
+          </Key>
+          <Property Name="ReceiptsRepresentationId" Type="Int32" Nullable="false" />
+          <Property Name="ReceiptNo" Type="String" Nullable="false" />
+          <Property Name="ReceiptId" Type="Int32" Nullable="false" />
+          <Property Name="New_ReceiptNo" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Represented_On" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="UserID" Type="Decimal" Precision="5" Scale="0" />
+          <Property Name="Gen_Datetime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="GPSLocation" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Receipt" Relationship="FCMSEntityModel.ReceiptReceiptsRepresentation" FromRole="ReceiptsRepresentation" ToRole="Receipt" />
+        </EntityType>
+        <Association Name="ReceiptReceiptsRepresentation">
+          <End Type="FCMSEntityModel.Receipt" Role="Receipt" Multiplicity="1" />
+          <End Type="FCMSEntityModel.ReceiptsRepresentation" Role="ReceiptsRepresentation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receipt">
+              <PropertyRef Name="ReceiptId" />
+            </Principal>
+            <Dependent Role="ReceiptsRepresentation">
+              <PropertyRef Name="ReceiptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ReceiptDetail">
+          <Key>
+            <PropertyRef Name="ReceiptDetailId" />
+          </Key>
+          <Property Name="ReceiptDetailId" Type="Int32" Nullable="false" />
+          <Property Name="ReceiptNo" Type="String" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ContractNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ReceiptId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Receipt" Relationship="FCMSEntityModel.ReceiptReceiptDetail" FromRole="ReceiptDetail" ToRole="Receipt" />
+        </EntityType>
+        <Association Name="ReceiptReceiptDetail">
+          <End Type="FCMSEntityModel.Receipt" Role="Receipt" Multiplicity="1" />
+          <End Type="FCMSEntityModel.ReceiptDetail" Role="ReceiptDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receipt">
+              <PropertyRef Name="ReceiptId" />
+            </Principal>
+            <Dependent Role="ReceiptDetail">
+              <PropertyRef Name="ReceiptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ReceiptReprint">
+          <Key>
+            <PropertyRef Name="ReceiptReprintId" />
+          </Key>
+          <Property Name="ReceiptReprintId" Type="Int32" Nullable="false" />
+          <Property Name="ReceiptId" Type="Int32" Nullable="false" />
+          <Property Name="ReceiptNo" Type="String" Nullable="false" />
+          <Property Name="Reprinted_On" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Reason" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="Gen_Datetime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="GPSLocation" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Receipt" Relationship="FCMSEntityModel.ReceiptReceiptReprint" FromRole="ReceiptReprint" ToRole="Receipt" />
+        </EntityType>
+        <Association Name="ReceiptReceiptReprint">
+          <End Type="FCMSEntityModel.Receipt" Role="Receipt" Multiplicity="1" />
+          <End Type="FCMSEntityModel.ReceiptReprint" Role="ReceiptReprint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receipt">
+              <PropertyRef Name="ReceiptId" />
+            </Principal>
+            <Dependent Role="ReceiptReprint">
+              <PropertyRef Name="ReceiptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ReceiptDenomination">
+          <Key>
+            <PropertyRef Name="ReceiptDenominationId" />
+          </Key>
+          <Property Name="ReceiptDenominationId" Type="Int32" Nullable="false" />
+          <Property Name="ReceiptNo" Type="String" Nullable="false" />
+          <Property Name="Denomination" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Count" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="ReceiptId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Receipt" Relationship="FCMSEntityModel.ReceiptReceiptDenomination" FromRole="ReceiptDenomination" ToRole="Receipt" />
+        </EntityType>
+        <Association Name="ReceiptReceiptDenomination">
+          <End Type="FCMSEntityModel.Receipt" Role="Receipt" Multiplicity="1" />
+          <End Type="FCMSEntityModel.ReceiptDenomination" Role="ReceiptDenomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receipt">
+              <PropertyRef Name="ReceiptId" />
+            </Principal>
+            <Dependent Role="ReceiptDenomination">
+              <PropertyRef Name="ReceiptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DCRMaster">
+          <Key>
+            <PropertyRef Name="DCRMasterId" />
+          </Key>
+          <Property Name="DCRMasterId" Type="Int32" Nullable="false" />
+          <Property Name="DCRNumber" Type="String" Nullable="false" />
+          <Property Name="Mode" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="UserId" Type="Decimal" Precision="5" Scale="0" />
+          <Property Name="Gen_Datetime" Type="DateTime" />
+          <Property Name="GPSLocation" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Auth_UserID" Type="Decimal" Precision="5" Scale="0" />
+          <Property Name="Auth_On" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DCRReceipts" Relationship="FCMSEntityModel.DCRMasterDCRReceipt" FromRole="DCRMaster" ToRole="DCRReceipt" />
+          <NavigationProperty Name="DCSDCRs" Relationship="FCMSEntityModel.DCRMasterDCSDCR" FromRole="DCRMaster" ToRole="DCSDCR" />
+        </EntityType>
+        <EntityType Name="DCRReceipt">
+          <Key>
+            <PropertyRef Name="DCRReceiptId" />
+          </Key>
+          <Property Name="DCRReceiptId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DCRMasterId" Type="Int32" Nullable="false" />
+          <Property Name="ReceiptId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Receipt1" Relationship="FCMSEntityModel.ReceiptDCRReceipt" FromRole="DCRReceipt" ToRole="Receipt" />
+          <NavigationProperty Name="DCRMaster" Relationship="FCMSEntityModel.DCRMasterDCRReceipt" FromRole="DCRReceipt" ToRole="DCRMaster" />
+        </EntityType>
+        <Association Name="ReceiptDCRReceipt">
+          <End Type="FCMSEntityModel.Receipt" Role="Receipt" Multiplicity="1" />
+          <End Type="FCMSEntityModel.DCRReceipt" Role="DCRReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receipt">
+              <PropertyRef Name="ReceiptId" />
+            </Principal>
+            <Dependent Role="DCRReceipt">
+              <PropertyRef Name="ReceiptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DCRMasterDCRReceipt">
+          <End Type="FCMSEntityModel.DCRMaster" Role="DCRMaster" Multiplicity="1" />
+          <End Type="FCMSEntityModel.DCRReceipt" Role="DCRReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DCRMaster">
+              <PropertyRef Name="DCRMasterId" />
+            </Principal>
+            <Dependent Role="DCRReceipt">
+              <PropertyRef Name="DCRMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DCSMaster">
+          <Key>
+            <PropertyRef Name="DCSMasterId" />
+          </Key>
+          <Property Name="DCSMasterId" Type="Int32" Nullable="false" />
+          <Property Name="DCSNumber" Type="String" Nullable="false" />
+          <Property Name="BankCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Mode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SlipNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="UserId" Type="Decimal" Precision="5" Scale="0" />
+          <Property Name="Gen_Datetime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="GPSLocation" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DCSDCRs" Relationship="FCMSEntityModel.DCSMasterDCSDCR" FromRole="DCSMaster" ToRole="DCSDCR" />
+        </EntityType>
+        <EntityType Name="DCSDCR">
+          <Key>
+            <PropertyRef Name="DCSDCRId" />
+          </Key>
+          <Property Name="DCSDCRId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DCSMasterId" Type="Int32" Nullable="false" />
+          <Property Name="DCRMasterId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DCSMaster" Relationship="FCMSEntityModel.DCSMasterDCSDCR" FromRole="DCSDCR" ToRole="DCSMaster" />
+          <NavigationProperty Name="DCRMaster" Relationship="FCMSEntityModel.DCRMasterDCSDCR" FromRole="DCSDCR" ToRole="DCRMaster" />
+        </EntityType>
+        <Association Name="DCSMasterDCSDCR">
+          <End Type="FCMSEntityModel.DCSMaster" Role="DCSMaster" Multiplicity="1" />
+          <End Type="FCMSEntityModel.DCSDCR" Role="DCSDCR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DCSMaster">
+              <PropertyRef Name="DCSMasterId" />
+            </Principal>
+            <Dependent Role="DCSDCR">
+              <PropertyRef Name="DCSMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DCRMasterDCSDCR">
+          <End Type="FCMSEntityModel.DCRMaster" Role="DCRMaster" Multiplicity="1" />
+          <End Type="FCMSEntityModel.DCSDCR" Role="DCSDCR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DCRMaster">
+              <PropertyRef Name="DCRMasterId" />
+            </Principal>
+            <Dependent Role="DCSDCR">
+              <PropertyRef Name="DCRMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DeviceLocation">
+          <Key>
+            <PropertyRef Name="DeviceLocationId" />
+          </Key>
+          <Property Name="DeviceLocationId" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="DeviceId" Type="Int32" Nullable="false" />
+          <Property Name="Latitude" Nullable="false" Type="Decimal" />
+          <Property Name="Longitude" Nullable="false" Type="Decimal" />
+          <Property Name="Altitude" Nullable="false" Type="Decimal" />
+          <Property Name="GPSDateTime" Nullable="false" Type="DateTime" />
+          <Property Name="ReceivedDateTime" Nullable="false" Type="DateTime" />
+          <NavigationProperty Name="Device" Relationship="FCMSEntityModel.DeviceDeviceLocation" FromRole="DeviceLocation" ToRole="Device" />
+        </EntityType>
+        <Association Name="DeviceDeviceLocation">
+          <End Type="FCMSEntityModel.Device" Role="Device" Multiplicity="1" />
+          <End Type="FCMSEntityModel.DeviceLocation" Role="DeviceLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Device">
+              <PropertyRef Name="DeviceId" />
+            </Principal>
+            <Dependent Role="DeviceLocation">
+              <PropertyRef Name="DeviceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserAttribute">
+          <Key>
+            <PropertyRef Name="UserAttributeId" />
+          </Key>
+          <Property Name="UserAttributeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="FCMSEntityModel.UserUserAttribute" FromRole="UserAttribute" ToRole="User" />
+        </EntityType>
+        <Association Name="UserUserAttribute">
+          <End Type="FCMSEntityModel.User" Role="User" Multiplicity="1" />
+          <End Type="FCMSEntityModel.UserAttribute" Role="UserAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserAttribute">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BranchUser">
+          <End Type="FCMSEntityModel.Branch" Role="Branch" Multiplicity="1" />
+          <End Type="FCMSEntityModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branch">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="BranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StateBranch">
+          <End Type="FCMSEntityModel.State" Role="State" Multiplicity="1" />
+          <End Type="FCMSEntityModel.Branch" Role="Branch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="Branch">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserThreshold">
+          <Key>
+            <PropertyRef Name="UserThresholdId" />
+          </Key>
+          <Property Name="UserThresholdId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Base" Type="Decimal" Nullable="false" />
+          <Property Name="Next" Type="Decimal" Nullable="false" />
+          <Property Name="Far" Type="Decimal" Nullable="false" />
+          <Property Name="NextPin" Type="Int32" Nullable="false" />
+          <Property Name="NextPinUsed" Type="Boolean" Nullable="false" />
+          <Property Name="FarPin" Type="String" Nullable="false" />
+          <Property Name="FarPinUsed" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="FCMSEntityModel.UserUserThreshold" FromRole="UserThreshold" ToRole="User" />
+        </EntityType>
+        <Association Name="UserUserThreshold">
+          <End Type="FCMSEntityModel.User" Role="User" Multiplicity="1" />
+          <End Type="FCMSEntityModel.UserThreshold" Role="UserThreshold" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserThreshold">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ContractReceiptMessage">
+          <Key>
+            <PropertyRef Name="ContractReceiptMessageId" />
+          </Key>
+          <Property Name="ContractReceiptMessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContractId" Type="Int32" Nullable="false" />
+          <Property Name="Message" Type="String" Nullable="false" />
+          <Property Name="ValidFrom" Type="DateTime" Nullable="false" />
+          <Property Name="ValidTo" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Contract" Relationship="FCMSEntityModel.ContractContractReceiptMessage" FromRole="ContractReceiptMessage" ToRole="Contract" />
+        </EntityType>
+        <Association Name="ContractContractReceiptMessage">
+          <End Type="FCMSEntityModel.Contract" Role="Contract" Multiplicity="1" />
+          <End Type="FCMSEntityModel.ContractReceiptMessage" Role="ContractReceiptMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract">
+              <PropertyRef Name="ContractId" />
+            </Principal>
+            <Dependent Role="ContractReceiptMessage">
+              <PropertyRef Name="ContractId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserNotification">
+          <Key>
+            <PropertyRef Name="UserNotificationId" />
+          </Key>
+          <Property Name="UserNotificationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="NoticationType" Type="String" Nullable="false" />
+          <Property Name="Message" Type="String" Nullable="false" />
+          <Property Name="IsCommunicated" Type="Boolean" Nullable="false" />
+          <Property Name="ValidFrom" Type="DateTime" Nullable="false" />
+          <Property Name="ValidTill" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="FCMSEntityModel.UserUserNotification" FromRole="UserNotification" ToRole="User" />
+        </EntityType>
+        <Association Name="UserUserNotification">
+          <End Type="FCMSEntityModel.User" Role="User" Multiplicity="1" />
+          <End Type="FCMSEntityModel.UserNotification" Role="UserNotification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserNotification">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TradeAdvanceMaster">
+          <Key>
+            <PropertyRef Name="TA_Link_No" />
+          </Key>
+          <Property Name="TA_Link_No" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Beneficiary_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" />
+          <Property Name="Phone" Type="String" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UpdateReason">
+          <Key>
+            <PropertyRef Name="UpdateReasonId" />
+          </Key>
+          <Property Name="UpdateReasonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReasonGroup" Type="String" Nullable="false" />
+          <Property Name="ReasonType" Type="String" Nullable="false" />
+          <Property Name="Noterequired" Type="Boolean" Nullable="false" />
+          <Property Name="PhotoRequired" Type="Boolean" Nullable="false" />
+          <Property Name="SignatureRequired" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Updates" Relationship="FCMSEntityModel.UpdateReasonUpdate" FromRole="UpdateReason" ToRole="Update" />
+        </EntityType>
+        <EntityType Name="Update">
+          <Key>
+            <PropertyRef Name="UpdateId" />
+          </Key>
+          <Property Name="UpdateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UpdateReasonId" Type="Int32" Nullable="false" />
+          <Property Name="UpdateValue" Type="String" Nullable="false" />
+          <NavigationProperty Name="UpdateReason" Relationship="FCMSEntityModel.UpdateReasonUpdate" FromRole="Update" ToRole="UpdateReason" />
+          <Property Name="DeviceId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Device" Relationship="FCMSEntityModel.DeviceUpdate" FromRole="Update" ToRole="Device" />
+        </EntityType>
+        <Association Name="UpdateReasonUpdate">
+          <End Type="FCMSEntityModel.UpdateReason" Role="UpdateReason" Multiplicity="1" />
+          <End Type="FCMSEntityModel.Update" Role="Update" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UpdateReason">
+              <PropertyRef Name="UpdateReasonId" />
+            </Principal>
+            <Dependent Role="Update">
+              <PropertyRef Name="UpdateReasonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DeviceUpdate">
+          <End Type="FCMSEntityModel.Device" Role="Device" Multiplicity="1" />
+          <End Type="FCMSEntityModel.Update" Role="Update" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Device">
+              <PropertyRef Name="DeviceId" />
+            </Principal>
+            <Dependent Role="Update">
+              <PropertyRef Name="DeviceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ReceiptImage">
+          <Key>
+            <PropertyRef Name="ReceiptImageId" />
+          </Key>
+          <Property Name="ReceiptImageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReceiptId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <Property Name="ImageData" Type="Binary" Nullable="false" />
+          <Property Name="ImageDateTime" Type="String" Nullable="false" />
+          <NavigationProperty Name="Receipt" Relationship="FCMSEntityModel.ReceiptReceiptImage" FromRole="ReceiptImage" ToRole="Receipt" />
+        </EntityType>
+        <Association Name="ReceiptReceiptImage">
+          <End Type="FCMSEntityModel.Receipt" Role="Receipt" Multiplicity="1" />
+          <End Type="FCMSEntityModel.ReceiptImage" Role="ReceiptImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receipt">
+              <PropertyRef Name="ReceiptId" />
+            </Principal>
+            <Dependent Role="ReceiptImage">
+              <PropertyRef Name="ReceiptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CategoryGroup">
+          <Key>
+            <PropertyRef Name="CategoryGroupId" />
+          </Key>
+          <Property Name="CategoryGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <NavigationProperty Name="CategoryItems" Relationship="FCMSEntityModel.CategoryGroupCategoryItem" FromRole="CategoryGroup" ToRole="CategoryItem" />
+        </EntityType>
+        <EntityType Name="CategoryItem">
+          <Key>
+            <PropertyRef Name="CategoryItemId" />
+          </Key>
+          <Property Name="CategoryItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryGroupId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <Property Name="Code" Type="String" Nullable="true" />
+          <NavigationProperty Name="CategoryGroup" Relationship="FCMSEntityModel.CategoryGroupCategoryItem" FromRole="CategoryItem" ToRole="CategoryGroup" />
+        </EntityType>
+        <Association Name="CategoryGroupCategoryItem">
+          <End Type="FCMSEntityModel.CategoryGroup" Role="CategoryGroup" Multiplicity="1" />
+          <End Type="FCMSEntityModel.CategoryItem" Role="CategoryItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoryGroup">
+              <PropertyRef Name="CategoryGroupId" />
+            </Principal>
+            <Dependent Role="CategoryItem">
+              <PropertyRef Name="CategoryGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TravelDebit">
+          <Key>
+            <PropertyRef Name="TravelDebitId" />
+          </Key>
+          <Property Name="TravelDebitId" Type="Int32" Nullable="false" />
+          <Property Name="VoucherNo" Type="String" Nullable="false" />
+          <Property Name="Feedback" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Date" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CheckedWith" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RelationShip" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="ReceiptNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="UserID" Type="Decimal" Precision="5" Scale="0" />
+          <Property Name="Gen_Datetime" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="GPSLocation" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TravelDebitDetails" Relationship="FCMSEntityModel.TravelDebitTravelDebitDetail" FromRole="TravelDebit" ToRole="TravelDebitDetail" />
+        </EntityType>
+        <EntityType Name="TravelDebitDetail">
+          <Key>
+            <PropertyRef Name="TravelDebitDetailId" />
+          </Key>
+          <Property Name="TravelDebitDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TravelDebitId" Type="Int32" Nullable="false" />
+          <Property Name="ContractNo" Type="String" Nullable="false" />
+          <NavigationProperty Name="TravelDebit" Relationship="FCMSEntityModel.TravelDebitTravelDebitDetail" FromRole="TravelDebitDetail" ToRole="TravelDebit" />
+        </EntityType>
+        <Association Name="TravelDebitTravelDebitDetail">
+          <End Type="FCMSEntityModel.TravelDebit" Role="TravelDebit" Multiplicity="1" />
+          <End Type="FCMSEntityModel.TravelDebitDetail" Role="TravelDebitDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TravelDebit">
+              <PropertyRef Name="TravelDebitId" />
+            </Principal>
+            <Dependent Role="TravelDebitDetail">
+              <PropertyRef Name="TravelDebitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FCMSEntityModelStoreContainer" CdmEntityContainer="FCMSEntities">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="PassWordHash" ColumnName="PassWordHash" />
+          <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="Blocked" ColumnName="Blocked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.UserRole)">
+        <MappingFragment StoreEntitySet="UserRoles">
+          <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserUserRoles">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.UserUserRole)">
+        <MappingFragment StoreEntitySet="UserUserRoles">
+          <ScalarProperty Name="UserUserRoleId" ColumnName="UserUserRoleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.State)">
+        <MappingFragment StoreEntitySet="States">
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banks">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.Bank)">
+        <MappingFragment StoreEntitySet="Banks">
+          <ScalarProperty Name="BankId" ColumnName="BankId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IFCSCode" ColumnName="IFCSCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Branches">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.Branch)">
+        <MappingFragment StoreEntitySet="Branches">
+          <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address4" ColumnName="Address4" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.Customer)">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="Salutation" ColumnName="Salutation" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address4" ColumnName="Address4" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="PanNo" ColumnName="PanNo" />
+          <ScalarProperty Name="ContractCount" ColumnName="ContractCount" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="GPSLatitude" ColumnName="GPSLatitude" />
+          <ScalarProperty Name="GPSLongitude" ColumnName="GPSLongitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerCustomInfoes">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.CustomerCustomInfo)">
+        <MappingFragment StoreEntitySet="CustomerCustomInfoes">
+          <ScalarProperty Name="CustomerCustomInfoId" ColumnName="CustomerCustomInfoId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contracts">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.Contract)">
+        <MappingFragment StoreEntitySet="Contracts">
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="ContractNo" ColumnName="ContractNo" />
+          <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="ContractDt" ColumnName="ContractDt" />
+          <ScalarProperty Name="InvoiceDt" ColumnName="InvoiceDt" />
+          <ScalarProperty Name="InvoiceAmt" ColumnName="InvoiceAmt" />
+          <ScalarProperty Name="FinAmt" ColumnName="FinAmt" />
+          <ScalarProperty Name="FinCharges" ColumnName="FinCharges" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="LastDueDt" ColumnName="LastDueDt" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Bus_Done_By" ColumnName="Bus_Done_By" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Guarantors">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.Guarantor)">
+        <MappingFragment StoreEntitySet="Guarantors">
+          <ScalarProperty Name="GuarantorId" ColumnName="GuarantorId" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractCustomInfoes">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.ContractCustomInfo)">
+        <MappingFragment StoreEntitySet="ContractCustomInfoes">
+          <ScalarProperty Name="ContractCustomInfoId" ColumnName="ContractCustomInfoId" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="DataType" ColumnName="DataType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Devices">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.Device)">
+        <MappingFragment StoreEntitySet="Devices">
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="DeviceTypeName" ColumnName="DeviceTypeName" />
+          <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="IMEI" ColumnName="IMEI" />
+          <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+          <ScalarProperty Name="IsBlocked" ColumnName="IsBlocked" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LastConnectedLatitude" ColumnName="LastConnectedLatitude" />
+          <ScalarProperty Name="LastConnectedLongitude" ColumnName="LastConnectedLongitude" />
+          <ScalarProperty Name="LastConnectedTime" ColumnName="LastConnectedTime" />
+          <ScalarProperty Name="PrinterMACId" ColumnName="PrinterMACId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeviceBlocks">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.DeviceBlock)">
+        <MappingFragment StoreEntitySet="DeviceBlocks">
+          <ScalarProperty Name="DeviceBlockId" ColumnName="DeviceBlockId" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="ReasonForBlocking" ColumnName="ReasonForBlocking" />
+          <ScalarProperty Name="BlockedByUserId" ColumnName="BlockedByUserId" />
+          <ScalarProperty Name="BlockedForUserId" ColumnName="BlockedForUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeviceEvents">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.DeviceEvent)">
+        <MappingFragment StoreEntitySet="DeviceEvents">
+          <ScalarProperty Name="DeviceEventId" ColumnName="DeviceEventId" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EventDateTime" ColumnName="EventDateTime" />
+          <ScalarProperty Name="EventSource" ColumnName="EventSource" />
+          <ScalarProperty Name="AssignedUserId" ColumnName="AssignedUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Receipts">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.Receipt)">
+        <MappingFragment StoreEntitySet="Receipts">
+          <ScalarProperty Name="ReceiptId" ColumnName="ReceiptId" />
+          <ScalarProperty Name="ReceiptNo" ColumnName="ReceiptNo" />
+          <ScalarProperty Name="ReceiptDt" ColumnName="ReceiptDt" />
+          <ScalarProperty Name="ReceiptAmt" ColumnName="ReceiptAmt" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="InstrumentAmt" ColumnName="InstrumentAmt" />
+          <ScalarProperty Name="InstrumentNo" ColumnName="InstrumentNo" />
+          <ScalarProperty Name="InstrumentDt" ColumnName="InstrumentDt" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="MICR" ColumnName="MICR" />
+          <ScalarProperty Name="Pay_Clear_location" ColumnName="Pay_Clear_location" />
+          <ScalarProperty Name="Remitted_By" ColumnName="Remitted_By" />
+          <ScalarProperty Name="Remitter_Name" ColumnName="Remitter_Name" />
+          <ScalarProperty Name="Remitter_Relationship" ColumnName="Remitter_Relationship" />
+          <ScalarProperty Name="PanNo" ColumnName="PanNo" />
+          <ScalarProperty Name="Rec_Category" ColumnName="Rec_Category" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+          <ScalarProperty Name="GPSLocation" ColumnName="GPSLocation" />
+          <ScalarProperty Name="CollectorUserId" ColumnName="CollectorUserId" />
+          <ScalarProperty Name="Gen_Datetime" ColumnName="Gen_Datetime" />
+          <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReceiptCancels">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.ReceiptCancel)">
+        <MappingFragment StoreEntitySet="ReceiptCancels">
+          <ScalarProperty Name="ReceiptNo" ColumnName="ReceiptNo" />
+          <ScalarProperty Name="ReceiptId" ColumnName="ReceiptId" />
+          <ScalarProperty Name="CancelledOn" ColumnName="CancelledOn" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Gen_Datetime" ColumnName="Gen_Datetime" />
+          <ScalarProperty Name="Tower_Name" ColumnName="Tower_Name" />
+          <ScalarProperty Name="Auth_UserID" ColumnName="Auth_UserID" />
+          <ScalarProperty Name="Auth_On" ColumnName="Auth_On" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReceiptsRepresentations">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.ReceiptsRepresentation)">
+        <MappingFragment StoreEntitySet="ReceiptsRepresentations">
+          <ScalarProperty Name="ReceiptsRepresentationId" ColumnName="ReceiptsRepresentationId" />
+          <ScalarProperty Name="ReceiptNo" ColumnName="ReceiptNo" />
+          <ScalarProperty Name="ReceiptId" ColumnName="ReceiptId" />
+          <ScalarProperty Name="New_ReceiptNo" ColumnName="New_ReceiptNo" />
+          <ScalarProperty Name="Represented_On" ColumnName="Represented_On" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Gen_Datetime" ColumnName="Gen_Datetime" />
+          <ScalarProperty Name="GPSLocation" ColumnName="GPSLocation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReceiptDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.ReceiptDetail)">
+        <MappingFragment StoreEntitySet="ReceiptDetails">
+          <ScalarProperty Name="ReceiptDetailId" ColumnName="ReceiptDetailId" />
+          <ScalarProperty Name="ReceiptNo" ColumnName="ReceiptNo" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ContractNo" ColumnName="ContractNo" />
+          <ScalarProperty Name="ReceiptId" ColumnName="ReceiptId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReceiptReprints">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.ReceiptReprint)">
+        <MappingFragment StoreEntitySet="ReceiptReprints">
+          <ScalarProperty Name="ReceiptReprintId" ColumnName="ReceiptReprintId" />
+          <ScalarProperty Name="ReceiptId" ColumnName="ReceiptId" />
+          <ScalarProperty Name="ReceiptNo" ColumnName="ReceiptNo" />
+          <ScalarProperty Name="Reprinted_On" ColumnName="Reprinted_On" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Gen_Datetime" ColumnName="Gen_Datetime" />
+          <ScalarProperty Name="GPSLocation" ColumnName="GPSLocation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReceiptDenominations">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.ReceiptDenomination)">
+        <MappingFragment StoreEntitySet="ReceiptDenominations">
+          <ScalarProperty Name="ReceiptDenominationId" ColumnName="ReceiptDenominationId" />
+          <ScalarProperty Name="ReceiptNo" ColumnName="ReceiptNo" />
+          <ScalarProperty Name="Denomination" ColumnName="Denomination" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="ReceiptId" ColumnName="ReceiptId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DCRMasters">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.DCRMaster)">
+        <MappingFragment StoreEntitySet="DCRMasters">
+          <ScalarProperty Name="DCRMasterId" ColumnName="DCRMasterId" />
+          <ScalarProperty Name="DCRNumber" ColumnName="DCRNumber" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Gen_Datetime" ColumnName="Gen_Datetime" />
+          <ScalarProperty Name="GPSLocation" ColumnName="GPSLocation" />
+          <ScalarProperty Name="Auth_UserID" ColumnName="Auth_UserID" />
+          <ScalarProperty Name="Auth_On" ColumnName="Auth_On" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DCRReceipts">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.DCRReceipt)">
+        <MappingFragment StoreEntitySet="DCRReceipts">
+          <ScalarProperty Name="DCRReceiptId" ColumnName="DCRReceiptId" />
+          <ScalarProperty Name="DCRMasterId" ColumnName="DCRMasterId" />
+          <ScalarProperty Name="ReceiptId" ColumnName="ReceiptId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DCSMasters">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.DCSMaster)">
+        <MappingFragment StoreEntitySet="DCSMasters">
+          <ScalarProperty Name="DCSMasterId" ColumnName="DCSMasterId" />
+          <ScalarProperty Name="DCSNumber" ColumnName="DCSNumber" />
+          <ScalarProperty Name="BankCode" ColumnName="BankCode" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="SlipNo" ColumnName="SlipNo" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Gen_Datetime" ColumnName="Gen_Datetime" />
+          <ScalarProperty Name="GPSLocation" ColumnName="GPSLocation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DCSDCRs">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.DCSDCR)">
+        <MappingFragment StoreEntitySet="DCSDCRs">
+          <ScalarProperty Name="DCSDCRId" ColumnName="DCSDCRId" />
+          <ScalarProperty Name="DCSMasterId" ColumnName="DCSMasterId" />
+          <ScalarProperty Name="DCRMasterId" ColumnName="DCRMasterId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeviceLocations">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.DeviceLocation)">
+        <MappingFragment StoreEntitySet="DeviceLocations">
+          <ScalarProperty Name="DeviceLocationId" ColumnName="DeviceLocationId" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Altitude" ColumnName="Altitude" />
+          <ScalarProperty Name="GPSDateTime" ColumnName="GPSDateTime" />
+          <ScalarProperty Name="ReceivedDateTime" ColumnName="ReceivedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAttributes">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.UserAttribute)">
+        <MappingFragment StoreEntitySet="UserAttributes">
+          <ScalarProperty Name="UserAttributeId" ColumnName="UserAttributeId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserThresholds">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.UserThreshold)">
+        <MappingFragment StoreEntitySet="UserThresholds">
+          <ScalarProperty Name="UserThresholdId" ColumnName="UserThresholdId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Base" ColumnName="Base" />
+          <ScalarProperty Name="Next" ColumnName="Next" />
+          <ScalarProperty Name="Far" ColumnName="Far" />
+          <ScalarProperty Name="NextPin" ColumnName="NextPin" />
+          <ScalarProperty Name="NextPinUsed" ColumnName="NextPinUsed" />
+          <ScalarProperty Name="FarPin" ColumnName="FarPin" />
+          <ScalarProperty Name="FarPinUsed" ColumnName="FarPinUsed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractReceiptMessages">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.ContractReceiptMessage)">
+        <MappingFragment StoreEntitySet="ContractReceiptMessages">
+          <ScalarProperty Name="ContractReceiptMessageId" ColumnName="ContractReceiptMessageId" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserNotifications">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.UserNotification)">
+        <MappingFragment StoreEntitySet="UserNotifications">
+          <ScalarProperty Name="UserNotificationId" ColumnName="UserNotificationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="NoticationType" ColumnName="NoticationType" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="IsCommunicated" ColumnName="IsCommunicated" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidTill" ColumnName="ValidTill" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TradeAdvanceMasters">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.TradeAdvanceMaster)">
+        <MappingFragment StoreEntitySet="TradeAdvanceMasters">
+          <ScalarProperty Name="TA_Link_No" ColumnName="TA_Link_No" />
+          <ScalarProperty Name="Beneficiary_Name" ColumnName="Beneficiary_Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UpdateReasons">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.UpdateReason)">
+        <MappingFragment StoreEntitySet="UpdateReasons">
+          <ScalarProperty Name="UpdateReasonId" ColumnName="UpdateReasonId" />
+          <ScalarProperty Name="ReasonGroup" ColumnName="ReasonGroup" />
+          <ScalarProperty Name="ReasonType" ColumnName="ReasonType" />
+          <ScalarProperty Name="Noterequired" ColumnName="Noterequired" />
+          <ScalarProperty Name="PhotoRequired" ColumnName="PhotoRequired" />
+          <ScalarProperty Name="SignatureRequired" ColumnName="SignatureRequired" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Updates">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.Update)">
+        <MappingFragment StoreEntitySet="Updates">
+          <ScalarProperty Name="UpdateId" ColumnName="UpdateId" />
+          <ScalarProperty Name="UpdateReasonId" ColumnName="UpdateReasonId" />
+          <ScalarProperty Name="UpdateValue" ColumnName="UpdateValue" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReceiptImages">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.ReceiptImage)">
+        <MappingFragment StoreEntitySet="ReceiptImages">
+          <ScalarProperty Name="ReceiptImageId" ColumnName="ReceiptImageId" />
+          <ScalarProperty Name="ReceiptId" ColumnName="ReceiptId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ImageData" ColumnName="ImageData" />
+          <ScalarProperty Name="ImageDateTime" ColumnName="ImageDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoryGroups">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.CategoryGroup)">
+        <MappingFragment StoreEntitySet="CategoryGroups">
+          <ScalarProperty Name="CategoryGroupId" ColumnName="CategoryGroupId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoryItems">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.CategoryItem)">
+        <MappingFragment StoreEntitySet="CategoryItems">
+          <ScalarProperty Name="CategoryItemId" ColumnName="CategoryItemId" />
+          <ScalarProperty Name="CategoryGroupId" ColumnName="CategoryGroupId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TravelDebits">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.TravelDebit)">
+        <MappingFragment StoreEntitySet="TravelDebits">
+          <ScalarProperty Name="TravelDebitId" ColumnName="TravelDebitId" />
+          <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="CheckedWith" ColumnName="CheckedWith" />
+          <ScalarProperty Name="RelationShip" ColumnName="RelationShip" />
+          <ScalarProperty Name="ReceiptNo" ColumnName="ReceiptNo" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Gen_Datetime" ColumnName="Gen_Datetime" />
+          <ScalarProperty Name="GPSLocation" ColumnName="GPSLocation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TravelDebitDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(FCMSEntityModel.TravelDebitDetail)">
+        <MappingFragment StoreEntitySet="TravelDebitDetails">
+          <ScalarProperty Name="TravelDebitDetailId" ColumnName="TravelDebitDetailId" />
+          <ScalarProperty Name="TravelDebitId" ColumnName="TravelDebitId" />
+          <ScalarProperty Name="ContractNo" ColumnName="ContractNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="DefaultDatabaseSchema" Value="" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

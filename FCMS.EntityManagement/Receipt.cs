@@ -14,6 +14,19 @@ namespace FCMS.EntityManagement
     
     public partial class Receipt
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Receipt()
+        {
+            this.ReceiptCancels = new HashSet<ReceiptCancel>();
+            this.ReceiptsRepresentations = new HashSet<ReceiptsRepresentation>();
+            this.ReceiptDetails = new HashSet<ReceiptDetail>();
+            this.ReceiptReprints = new HashSet<ReceiptReprint>();
+            this.ReceiptDenominations = new HashSet<ReceiptDenomination>();
+            this.DCRReceipts = new HashSet<DCRReceipt>();
+            this.ReceiptImages = new HashSet<ReceiptImage>();
+        }
+    
+        public int ReceiptId { get; set; }
         public string ReceiptNo { get; set; }
         public string ReceiptDt { get; set; }
         public Nullable<decimal> ReceiptAmt { get; set; }
@@ -32,8 +45,24 @@ namespace FCMS.EntityManagement
         public Nullable<decimal> Rec_Category { get; set; }
         public string BranchCode { get; set; }
         public Nullable<decimal> MachineID { get; set; }
-        public string Tower_Name { get; set; }
-        public Nullable<decimal> UserID { get; set; }
-        public string Gen_Datetime { get; set; }
+        public string GPSLocation { get; set; }
+        public Nullable<int> CollectorUserId { get; set; }
+        public Nullable<System.DateTime> Gen_Datetime { get; set; }
+        public string CustomerType { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReceiptCancel> ReceiptCancels { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReceiptsRepresentation> ReceiptsRepresentations { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReceiptDetail> ReceiptDetails { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReceiptReprint> ReceiptReprints { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReceiptDenomination> ReceiptDenominations { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DCRReceipt> DCRReceipts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReceiptImage> ReceiptImages { get; set; }
     }
 }

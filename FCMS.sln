@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DFD56D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCMS.EntityManagement", "FCMS.EntityManagement\FCMS.EntityManagement.csproj", "{FF8E7826-74A8-4B3A-B614-40DC87B2964D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCMS.Portal", "FCMS.Portal\FCMS.Portal.csproj", "{5876E049-A836-4E52-83F6-020245CFAE0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{FF8E7826-74A8-4B3A-B614-40DC87B2964D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF8E7826-74A8-4B3A-B614-40DC87B2964D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF8E7826-74A8-4B3A-B614-40DC87B2964D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5876E049-A836-4E52-83F6-020245CFAE0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5876E049-A836-4E52-83F6-020245CFAE0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5876E049-A836-4E52-83F6-020245CFAE0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5876E049-A836-4E52-83F6-020245CFAE0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

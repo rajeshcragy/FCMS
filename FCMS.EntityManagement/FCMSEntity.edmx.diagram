@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="830a889d2f374ec581d12f879dcad84c" Name="Diagram1" ZoomLevel="93" >
+        <EntityTypeShape EntityType="FCMSEntityModel.User" Width="1.5" PointX="2.375" PointY="0.5" />
+        <EntityTypeShape EntityType="FCMSEntityModel.UserRole" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="FCMSEntityModel.UserUserRole" Width="1.5" PointX="0.5" PointY="2.75" />
+        <AssociationConnector Association="FCMSEntityModel.UserUserUserRole" />
+        <AssociationConnector Association="FCMSEntityModel.UserRoleUserUserRole" />
+        <EntityTypeShape EntityType="FCMSEntityModel.State" Width="1.5" PointX="9" PointY="0.5" />
+        <EntityTypeShape EntityType="FCMSEntityModel.Bank" Width="1.5" PointX="6.875" PointY="0.5" />
+        <EntityTypeShape EntityType="FCMSEntityModel.Branch" Width="1.5" PointX="6.625" PointY="3.375" />
+        <AssociationConnector Association="FCMSEntityModel.StateBank" />
+        <EntityTypeShape EntityType="FCMSEntityModel.Customer" Width="1.5" PointX="5.625" PointY="6.125" />
+        <EntityTypeShape EntityType="FCMSEntityModel.CustomerCustomInfo" Width="1.5" PointX="7.625" PointY="7.75" />
+        <AssociationConnector Association="FCMSEntityModel.CustomerCustomerCustomInfo" />
+        <EntityTypeShape EntityType="FCMSEntityModel.Contract" Width="1.5" PointX="2.375" PointY="6.75" />
+        <AssociationConnector Association="FCMSEntityModel.CustomerContract" />
+        <EntityTypeShape EntityType="FCMSEntityModel.Guarantor" Width="1.5" PointX="4" PointY="6.75" />
+        <AssociationConnector Association="FCMSEntityModel.CustomerGuarantor" />
+        <AssociationConnector Association="FCMSEntityModel.ContractGuarantor" />
+        <EntityTypeShape EntityType="FCMSEntityModel.ContractCustomInfo" Width="1.5" PointX="0.5" PointY="8.375" />
+        <AssociationConnector Association="FCMSEntityModel.ContractContractCustomInfo" />
+        <AssociationConnector Association="FCMSEntityModel.BranchContract" />
+        <EntityTypeShape EntityType="FCMSEntityModel.Device" Width="2.25" PointX="9.875" PointY="21" />
+        <EntityTypeShape EntityType="FCMSEntityModel.DeviceBlock" Width="1.5" PointX="12" PointY="4.5" />
+        <AssociationConnector Association="FCMSEntityModel.DeviceDeviceBlock" />
+        <AssociationConnector Association="FCMSEntityModel.BranchDevice" />
+        <EntityTypeShape EntityType="FCMSEntityModel.DeviceEvent" Width="1.5" PointX="12.25" PointY="0.875" />
+        <AssociationConnector Association="FCMSEntityModel.DeviceDeviceEvent" />
+        <AssociationConnector Association="FCMSEntityModel.UserDevice" />
+        <EntityTypeShape EntityType="FCMSEntityModel.Receipt" Width="1.875" PointX="3.375" PointY="12.375" />
+        <EntityTypeShape EntityType="FCMSEntityModel.ReceiptCancel" Width="1.5" PointX="0.75" PointY="10.75" />
+        <AssociationConnector Association="FCMSEntityModel.ReceiptReceiptCancel" />
+        <EntityTypeShape EntityType="FCMSEntityModel.ReceiptsRepresentation" Width="1.5" PointX="10.125" PointY="15.625" />
+        <AssociationConnector Association="FCMSEntityModel.ReceiptReceiptsRepresentation" />
+        <EntityTypeShape EntityType="FCMSEntityModel.ReceiptDetail" Width="1.5" PointX="6.25" PointY="17.75" />
+        <AssociationConnector Association="FCMSEntityModel.ReceiptReceiptDetail" />
+        <EntityTypeShape EntityType="FCMSEntityModel.ReceiptReprint" Width="1.5" PointX="6.125" PointY="12" />
+        <AssociationConnector Association="FCMSEntityModel.ReceiptReceiptReprint" />
+        <EntityTypeShape EntityType="FCMSEntityModel.ReceiptDenomination" Width="1.875" PointX="7.625" PointY="14.875" />
+        <AssociationConnector Association="FCMSEntityModel.ReceiptReceiptDenomination" />
+        <EntityTypeShape EntityType="FCMSEntityModel.DCRMaster" Width="1.5" PointX="10.75" PointY="10" />
+        <EntityTypeShape EntityType="FCMSEntityModel.DCRReceipt" Width="1.5" PointX="8.375" PointY="10.25" />
+        <AssociationConnector Association="FCMSEntityModel.ReceiptDCRReceipt" />
+        <AssociationConnector Association="FCMSEntityModel.DCRMasterDCRReceipt" />
+        <EntityTypeShape EntityType="FCMSEntityModel.DCSMaster" Width="1.5" PointX="15.375" PointY="9.75" />
+        <EntityTypeShape EntityType="FCMSEntityModel.DCSDCR" Width="1.5" PointX="13.25" PointY="10.625" />
+        <AssociationConnector Association="FCMSEntityModel.DCSMasterDCSDCR" />
+        <AssociationConnector Association="FCMSEntityModel.DCRMasterDCSDCR" />
+        <EntityTypeShape EntityType="FCMSEntityModel.DeviceLocation" PointX="9.625" PointY="6.625" Width="1.5" />
+        <AssociationConnector Association="FCMSEntityModel.DeviceDeviceLocation" />
+        <EntityTypeShape EntityType="FCMSEntityModel.UserAttribute" Width="1.5" PointX="4.875" PointY="3.75" />
+        <AssociationConnector Association="FCMSEntityModel.UserUserAttribute" />
+        <AssociationConnector Association="FCMSEntityModel.BranchUser" />
+        <AssociationConnector Association="FCMSEntityModel.StateBranch" />
+        <EntityTypeShape EntityType="FCMSEntityModel.UserThreshold" Width="1.5" PointX="0.5" PointY="5.125" />
+        <AssociationConnector Association="FCMSEntityModel.UserUserThreshold" />
+        <EntityTypeShape EntityType="FCMSEntityModel.ContractReceiptMessage" Width="2.5" PointX="0.5" PointY="14" />
+        <AssociationConnector Association="FCMSEntityModel.ContractContractReceiptMessage" />
+        <EntityTypeShape EntityType="FCMSEntityModel.UserNotification" Width="2" PointX="4.125" PointY="0.5" />
+        <AssociationConnector Association="FCMSEntityModel.UserUserNotification" />
+        <EntityTypeShape EntityType="FCMSEntityModel.TradeAdvanceMaster" Width="1.5" PointX="13.25" PointY="15.625" />
+        <EntityTypeShape EntityType="FCMSEntityModel.UpdateReason" Width="2" PointX="1" PointY="19.875" />
+        <EntityTypeShape EntityType="FCMSEntityModel.Update" Width="1.5" PointX="4" PointY="19.625" />
+        <AssociationConnector Association="FCMSEntityModel.UpdateReasonUpdate" />
+        <AssociationConnector Association="FCMSEntityModel.DeviceUpdate" />
+        <EntityTypeShape EntityType="FCMSEntityModel.ReceiptImage" Width="1.5" PointX="0.625" PointY="17.125" />
+        <AssociationConnector Association="FCMSEntityModel.ReceiptReceiptImage" />
+        <EntityTypeShape EntityType="FCMSEntityModel.CategoryGroup" Width="1.5" PointX="14.625" PointY="1.5" />
+        <EntityTypeShape EntityType="FCMSEntityModel.CategoryItem" Width="1.5" PointX="17.375" PointY="1.5" />
+        <AssociationConnector Association="FCMSEntityModel.CategoryGroupCategoryItem" />
+        <EntityTypeShape EntityType="FCMSEntityModel.TravelDebit" Width="1.5" PointX="14.375" PointY="4.75" />
+        <EntityTypeShape EntityType="FCMSEntityModel.TravelDebitDetail" Width="2.125" PointX="17.25" PointY="5.625" />
+        <AssociationConnector Association="FCMSEntityModel.TravelDebitTravelDebitDetail" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
