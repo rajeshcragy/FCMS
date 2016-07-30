@@ -5,10 +5,11 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Content.PM;
 
 namespace FCMS.Mobile.Droid
 {
-    [Activity(Label = "FCMS.Mobile.Droid", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, Theme = "@style/InboxTheme")]
     public class MainActivity : Activity
     {
         int count = 1;
