@@ -9,7 +9,7 @@ using Android.Content.PM;
 
 namespace FCMS.Mobile.Droid
 {
-    [Activity(MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, Theme = "@style/InboxTheme")]
+    [Activity(MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, Theme = "@style/MainMenuTheme")]
     public class MainActivity : Activity
     {
         int count = 1;
@@ -21,11 +21,7 @@ namespace FCMS.Mobile.Droid
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.MyButton);
-
-            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+         
         }
     }
 }
