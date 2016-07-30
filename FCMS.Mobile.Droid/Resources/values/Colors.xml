@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+  <color name="background">#A0A0A0</color>
+  <color name="listitem_default_color">#fffbd2</color>
+  <color name="listitem_pressed_color">#FFFFFF</color>
+  <color name="listitem_focused_color">#FFFFFF</color>
+</resources>
